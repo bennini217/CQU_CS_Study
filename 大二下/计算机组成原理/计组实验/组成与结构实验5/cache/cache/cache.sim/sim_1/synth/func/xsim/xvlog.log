@@ -1,0 +1,7 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/dell/cache/cache.sim/sim_1/synth/func/xsim/sim_direct_cache_func_synth.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cache
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/dell/cache/cache.srcs/sources_1/new/mem.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mem
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/dell/cache/cache.srcs/sim_1/new/sim_direct_cache.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sim_direct_cache

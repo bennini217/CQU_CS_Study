@@ -1,0 +1,208 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Sat Jun  1 12:36:32 2024
+# Process ID: 1724
+# Current directory: D:/校内学习/大二下期/computer components and design/实验指导书/实验5cache/cache
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent10628 D:\校内学习\大二下期\computer components and design\实验指导书\实验5cache\cache\cache.xpr
+# Log file: D:/校内学习/大二下期/computer components and design/实验指导书/实验5cache/cache/vivado.log
+# Journal file: D:/校内学习/大二下期/computer components and design/实验指导书/实验5cache/cache\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {D:/校内学习/大二下期/computer components and design/实验指导书/实验5cache/cache/cache.xpr}
+INFO: [Project 1-313] Project file moved from 'C:/Users/dell/cache' since last save.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'F:/Vivado/2018.3/data/ip'.
+open_project: Time (s): cpu = 00:00:05 ; elapsed = 00:00:10 . Memory (MB): peak = 899.207 ; gain = 222.230
+update_compile_order -fileset sources_1
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/校内学习/大二下期/computer components and design/实验指导书/实验5cache/cache/cache.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'sim_direct_cache' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/校内学习/大二下期/computer components and design/实验指导书/实验5cache/cache/cache.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj sim_direct_cache_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/校内学习/大二下期/computer components and design/实验指导书/实验5cache/cache/cache.srcs/sources_1/new/cache.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cache
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/校内学习/大二下期/computer components and design/实验指导书/实验5cache/cache/cache.srcs/sources_1/new/mem.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mem
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/校内学习/大二下期/computer components and design/实验指导书/实验5cache/cache/cache.srcs/sim_1/new/sim_direct_cache.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sim_direct_cache
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/校内学习/大二下期/computer components and design/实验指导书/实验5cache/cache/cache.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/校内学习/大二下期/computer components and design/实验指导书/实验5cache/cache/cache.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.3
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: F:/Vivado/2018.3/bin/unwrapped/win64.o/xelab.exe -wto 51ce4d2258cc40f3b000a27db794ec9f --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot sim_direct_cache_behav xil_defaultlib.sim_direct_cache xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "D:/校内学习/大二下期/computer components and design/实验指导书/实验5cache/cache/cache.srcs/sources_1/new/cache.v" Line 8. Module cache doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.cache
+Compiling module xil_defaultlib.mem
+Compiling module xil_defaultlib.sim_direct_cache
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot sim_direct_cache_behav
+
+****** Webtalk v2018.3 (64-bit)
+  **** SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+  **** IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source D:/校内学习/大二下期/computer -notrace
+couldn't read file "D:/校内学习/大二下期/computer": no such file or directory
+INFO: [Common 17-206] Exiting Webtalk at Sat Jun  1 12:38:21 2024...
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/校内学习/大二下期/computer components and design/实验指导书/实验5cache/cache/cache.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "sim_direct_cache_behav -key {Behavioral:sim_1:Functional:sim_direct_cache} -tclbatch {sim_direct_cache.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2018.3
+Time resolution is 1 ps
+source sim_direct_cache.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'sim_direct_cache_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:08 . Memory (MB): peak = 910.574 ; gain = 11.367
+save_wave_config {D:/校内学习/大二下期/computer components and design/实验指导书/实验5cache/cache/sim_direct_cache_behav.wcfg}
+add_files -fileset sim_1 -norecurse {{D:/校内学习/大二下期/computer components and design/实验指导书/实验5cache/cache/sim_direct_cache_behav.wcfg}}
+set_property xsim.view {{D:/校内学习/大二下期/computer components and design/实验指导书/实验5cache/cache/sim_direct_cache_behav.wcfg}} [get_filesets sim_1]
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/校内学习/大二下期/computer components and design/实验指导书/实验5cache/cache/cache.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'sim_direct_cache' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/校内学习/大二下期/computer components and design/实验指导书/实验5cache/cache/cache.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj sim_direct_cache_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/校内学习/大二下期/computer components and design/实验指导书/实验5cache/cache/cache.srcs/sources_1/new/cache.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cache
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/校内学习/大二下期/computer components and design/实验指导书/实验5cache/cache/cache.srcs/sources_1/new/mem.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mem
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/校内学习/大二下期/computer components and design/实验指导书/实验5cache/cache/cache.srcs/sim_1/new/sim_direct_cache.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sim_direct_cache
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/校内学习/大二下期/computer components and design/实验指导书/实验5cache/cache/cache.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.3
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: F:/Vivado/2018.3/bin/unwrapped/win64.o/xelab.exe -wto 51ce4d2258cc40f3b000a27db794ec9f --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot sim_direct_cache_behav xil_defaultlib.sim_direct_cache xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "D:/校内学习/大二下期/computer components and design/实验指导书/实验5cache/cache/cache.srcs/sources_1/new/cache.v" Line 15. Module cache doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.cache
+Compiling module xil_defaultlib.mem
+Compiling module xil_defaultlib.sim_direct_cache
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot sim_direct_cache_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/校内学习/大二下期/computer components and design/实验指导书/实验5cache/cache/cache.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "sim_direct_cache_behav -key {Behavioral:sim_1:Functional:sim_direct_cache} -tclbatch {sim_direct_cache.tcl} -view {{D:/校内学习/大二下期/computer components and design/实验指导书/实验5cache/cache/sim_direct_cache_behav.wcfg}} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2018.3
+Time resolution is 1 ps
+open_wave_config {D:/校内学习/大二下期/computer components and design/实验指导书/实验5cache/cache/sim_direct_cache_behav.wcfg}
+source sim_direct_cache.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'sim_direct_cache_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/校内学习/大二下期/computer components and design/实验指导书/实验5cache/cache/cache.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'sim_direct_cache' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/校内学习/大二下期/computer components and design/实验指导书/实验5cache/cache/cache.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj sim_direct_cache_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/校内学习/大二下期/computer components and design/实验指导书/实验5cache/cache/cache.srcs/sources_1/new/cache.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cache
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/校内学习/大二下期/computer components and design/实验指导书/实验5cache/cache/cache.srcs/sources_1/new/mem.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mem
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/校内学习/大二下期/computer components and design/实验指导书/实验5cache/cache/cache.srcs/sim_1/new/sim_direct_cache.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sim_direct_cache
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/校内学习/大二下期/computer components and design/实验指导书/实验5cache/cache/cache.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.3
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: F:/Vivado/2018.3/bin/unwrapped/win64.o/xelab.exe -wto 51ce4d2258cc40f3b000a27db794ec9f --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot sim_direct_cache_behav xil_defaultlib.sim_direct_cache xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "D:/校内学习/大二下期/computer components and design/实验指导书/实验5cache/cache/cache.srcs/sources_1/new/cache.v" Line 15. Module cache doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.cache
+Compiling module xil_defaultlib.mem
+Compiling module xil_defaultlib.sim_direct_cache
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot sim_direct_cache_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/校内学习/大二下期/computer components and design/实验指导书/实验5cache/cache/cache.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "sim_direct_cache_behav -key {Behavioral:sim_1:Functional:sim_direct_cache} -tclbatch {sim_direct_cache.tcl} -view {{D:/校内学习/大二下期/computer components and design/实验指导书/实验5cache/cache/sim_direct_cache_behav.wcfg}} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2018.3
+Time resolution is 1 ps
+open_wave_config {D:/校内学习/大二下期/computer components and design/实验指导书/实验5cache/cache/sim_direct_cache_behav.wcfg}
+source sim_direct_cache.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'sim_direct_cache_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+exit
+INFO: [Common 17-206] Exiting Vivado at Sat Jun  1 17:10:01 2024...

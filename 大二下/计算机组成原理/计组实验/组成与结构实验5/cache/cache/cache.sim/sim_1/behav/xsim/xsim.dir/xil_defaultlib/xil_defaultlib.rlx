@@ -1,0 +1,8 @@
+0.6
+2018.3
+Dec  7 2018
+00:33:28
+D:/pxx/computer organization and architecture/cache/cache.sim/sim_1/behav/xsim/glbl.v,1544155482,verilog,,,,glbl,,,,,,,,
+D:/pxx/computer organization and architecture/cache/cache.srcs/sim_1/new/sim_direct_cache.v,1717232597,verilog,,,,sim_direct_cache,,,,,,,,
+D:/pxx/computer organization and architecture/cache/cache.srcs/sources_1/new/cache.v,1717229339,verilog,,D:/pxx/computer organization and architecture/cache/cache.srcs/sources_1/new/mem.v,,cache,,,,,,,,
+D:/pxx/computer organization and architecture/cache/cache.srcs/sources_1/new/mem.v,1717229342,verilog,,D:/pxx/computer organization and architecture/cache/cache.srcs/sim_1/new/sim_direct_cache.v,,mem,,,,,,,,

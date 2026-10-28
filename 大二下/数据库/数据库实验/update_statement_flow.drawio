@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net">
+  <diagram name="Update Statement Flow" id="diagram-1">
+    <mxGraphModel dx="1364" dy="678" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- Stmt -->
+        <mxCell id="Stmt" value="Stmt&#xa;+type()" style="shape=swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="20" width="120" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- UpdateStmt -->
+        <mxCell id="UpdateStmt" value="UpdateStmt&#xa;+create(...)&#xa;+table()&#xa;+attribute_name()&#xa;+value()&#xa;+filter_stmt()" style="shape=swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="120" width="160" height="120" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="UpdateStmtEdge" style="endArrow=block;html=1;" edge="1" source="UpdateStmt" target="Stmt" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- LogicalOperator -->
+        <mxCell id="LogicalOperator" value="LogicalOperator&#xa;+type()&#xa;+get_op_type()" style="shape=swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="280" y="20" width="160" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- UpdateLogicalOperator -->
+        <mxCell id="UpdateLogicalOperator" value="UpdateLogicalOperator&#xa;+table()&#xa;+field_name()&#xa;+value()" style="shape=swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="280" y="120" width="180" height="100" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="UpdateLogicalEdge" style="endArrow=block;html=1;" edge="1" source="UpdateLogicalOperator" target="LogicalOperator" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- PhysicalOperator -->
+        <mxCell id="PhysicalOperator" value="PhysicalOperator&#xa;+type()&#xa;+get_op_type()&#xa;+open()&#xa;+next()&#xa;+close()" style="shape=swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="520" y="20" width="180" height="100" as="geometry"/>
+        </mxCell>
+
+        <!-- UpdatePhysicalOperator -->
+        <mxCell id="UpdatePhysicalOperator" value="UpdatePhysicalOperator&#xa;+open()&#xa;+next()&#xa;+close()" style="shape=swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="520" y="140" width="180" height="80" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="UpdatePhysicalEdge" style="endArrow=block;html=1;" edge="1" source="UpdatePhysicalOperator" target="PhysicalOperator" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- Table -->
+        <mxCell id="Table" value="Table&#xa;+set_value_to_record(...)" style="shape=swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="120" y="280" width="160" height="60" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="TableEdge1" style="endArrow=open;dashed=1;" edge="1" source="UpdateStmt" target="Table" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="TableEdge2" style="endArrow=open;dashed=1;" edge="1" source="UpdateLogicalOperator" target="Table" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="TableEdge3" style="endArrow=open;dashed=1;" edge="1" source="UpdatePhysicalOperator" target="Table" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- Trx -->
+        <mxCell id="Trx" value="Trx&#xa;+update_record(...)" style="shape=swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="520" y="260" width="160" height="60" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="TrxEdge" style="endArrow=open;dashed=1;" edge="1" source="UpdatePhysicalOperator" target="Trx" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
