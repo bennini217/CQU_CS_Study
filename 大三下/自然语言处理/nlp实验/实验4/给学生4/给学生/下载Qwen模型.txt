@@ -1,0 +1,45 @@
+方法一：在线下载LLM模型。
+1. 先要设置镜像源，这部分代码要放在所有import语句前
+import os
+os.environ["HF_ENDPOINT"] = "https://hub.opencsg.com/hf"
+os.environ["HF_TOKEN"] = "35c19102XXXXXXXXXXXXXXXXXXXXXX"
+
+这里使用的镜像源是hub.opencsg.com，需要先注册再取得Access token。
+
+如果使用镜像源是hf-mirror，使用：
+os.environ["HF_ENDPOINT"] = "https://hf-mirror.com"
+
+2. 然后就可以联网下载、加载LLM模型了，例如：
+   MODEL_NAME = "Qwen/Qwen2-0.5B-Instruct"
+   tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME, trust_remote_code=True)
+
+
+方法二：如果上述方式不行，就只能先将模型下载在本地，再从本地加载LLM模型。这种方式同样需要使用镜像源：modelscope，为了使用modelscope库下载模型文件，需要先安装依赖，主要步骤如下：
+  前置要求：在创建NoteBook实例的时候，请选择python3.9及以上版本，否则环境可能不支持modelscope后续使用。
+
+1. 安装依赖（通过modelscope下载更快）
+在 Notebook  Cell或终端中运行以下命令：
+   pip install modelscope -q
+   pip install transformers==4.37.0 accelerate -q
+
+2. 下载Qwen-0.5B-Chat 模型
+在 Notebook  Cell或终端中运行以下命令：
+from modelscope import snapshot_download
+model_dir = snapshot_download(
+    'Qwen/Qwen2-0.5B-Instruct', 
+    cache_dir='/home/ma-user/work/qwen-0.5b'
+)
+print(f" 下载成功！模型路径: {model_dir}")
+
+————————————————————————————————————————
+
+3. 加载模型
+
+model_path = "/home/ma-user/work/qwen-0.5b/Qwen/Qwen2-0___5B-Instruct"
+tokenizer = AutoTokenizer.from_pretrained(model_path, trust_remote_code=True)
+model = AutoModelForCausalLM.from_pretrained(
+    model_path,
+    device_map="auto",
+    torch_dtype=torch.float16, 
+    trust_remote_code=True
+)

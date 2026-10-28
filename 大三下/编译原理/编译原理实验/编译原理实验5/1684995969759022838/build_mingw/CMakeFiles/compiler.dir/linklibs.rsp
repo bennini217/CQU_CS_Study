@@ -1,0 +1,1 @@
+  -LE:/专业课/大三下/编译原理/编译原理实验/编译原理实验5/1684995969759022838/./lib  ../bin/libBackend.a ../bin/libOpt.a ../bin/libTools.a ../bin/libFront.a ../bin/libIR.a ../bin/libjsoncpp.a -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 

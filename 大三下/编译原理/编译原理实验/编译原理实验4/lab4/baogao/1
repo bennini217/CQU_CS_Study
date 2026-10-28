@@ -1,0 +1,12 @@
+clang -O0 toy_opt.c -o toy_O0 && ./toy_O0
+clang -O1 toy_opt.c -o toy_O1 && ./toy_O1
+clang -O2 toy_opt.c -o toy_O2 && ./toy_O2
+clang -O3 toy_opt.c -o toy_O3 && ./toy_O3
+clang -O0 -S toy_opt.c -o toy_O0.s
+clang -O2 -S toy_opt.c -o toy_O2.s
+diff -u toy_O0.s toy_O2.s | sed -n '1,120p'
+
+
+
+
+

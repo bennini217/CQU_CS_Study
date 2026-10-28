@@ -1,0 +1,2 @@
+D:\programs\mingw\bin\ar.exe qc ..\bin\libOpt.a CMakeFiles/Opt.dir/src/opt/optimizer.cpp.obj
+D:\programs\mingw\bin\ranlib.exe ..\bin\libOpt.a

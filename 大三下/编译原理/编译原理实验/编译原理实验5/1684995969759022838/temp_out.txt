@@ -1,0 +1,41 @@
+int doubleWhile()
+	0: def i_block1, 0
+	1: mov i_block1, 5
+	2: def j_block1, 0
+	3: mov j_block1, 7
+	4: def t0, 100
+	5: lss t1, i_block1, t0
+	6: if t1 goto [pc, 2]
+	7: goto [pc, 17]
+	8: def t2, 30
+	9: add t3, i_block1, t2
+	10: mov i_block1, t3
+	11: def t4, 100
+	12: lss t5, j_block1, t4
+	13: if t5 goto [pc, 2]
+	14: goto [pc, 5]
+	15: def t6, 6
+	16: add t7, j_block1, t6
+	17: mov j_block1, t7
+	18: goto [pc, -7]
+	19: __unuse__ null, null, null
+	20: def t8, 100
+	21: sub t9, j_block1, t8
+	22: mov j_block1, t9
+	23: goto [pc, -19]
+	24: __unuse__ null, null, null
+	25: return j_block1
+end
+
+int main()
+	0: call t10, global()
+	1: call t11, doubleWhile()
+	2: return t11
+	3: return 0
+end
+
+void global()
+	0: return null
+end
+
+GVT:

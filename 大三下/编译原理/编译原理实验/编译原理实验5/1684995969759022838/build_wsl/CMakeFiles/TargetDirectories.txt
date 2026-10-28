@@ -1,0 +1,8 @@
+/mnt/e/专业课/大三下/编译原理/编译原理实验/编译原理实验5/1684995969759022838/build_wsl/CMakeFiles/jsoncpp.dir
+/mnt/e/专业课/大三下/编译原理/编译原理实验/编译原理实验5/1684995969759022838/build_wsl/CMakeFiles/Front.dir
+/mnt/e/专业课/大三下/编译原理/编译原理实验/编译原理实验5/1684995969759022838/build_wsl/CMakeFiles/Backend.dir
+/mnt/e/专业课/大三下/编译原理/编译原理实验/编译原理实验5/1684995969759022838/build_wsl/CMakeFiles/IR.dir
+/mnt/e/专业课/大三下/编译原理/编译原理实验/编译原理实验5/1684995969759022838/build_wsl/CMakeFiles/Tools.dir
+/mnt/e/专业课/大三下/编译原理/编译原理实验/编译原理实验5/1684995969759022838/build_wsl/CMakeFiles/compiler.dir
+/mnt/e/专业课/大三下/编译原理/编译原理实验/编译原理实验5/1684995969759022838/build_wsl/CMakeFiles/edit_cache.dir
+/mnt/e/专业课/大三下/编译原理/编译原理实验/编译原理实验5/1684995969759022838/build_wsl/CMakeFiles/rebuild_cache.dir

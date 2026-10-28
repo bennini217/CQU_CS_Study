@@ -1,0 +1,2 @@
+D:\programs\mingw\bin\ar.exe qc ..\bin\libBackend.a CMakeFiles/Backend.dir/src/backend/generator.cpp.obj
+D:\programs\mingw\bin\ranlib.exe ..\bin\libBackend.a
