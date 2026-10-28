@@ -1,0 +1,24 @@
+kernel/sem/CMakeFiles/sem.dir/prt_sem_init.c.obj: \
+ /Users/sotiny/Desktop/os2024_exp/rst/os2024_exp_redo/lab8/src/kernel/sem/prt_sem_init.c \
+ /Users/sotiny/Desktop/os2024_exp/rst/os2024_exp_redo/lab8/src/include/prt_sem_external.h \
+ /Users/sotiny/Desktop/os2024_exp/rst/os2024_exp_redo/lab8/src/include/prt_sem.h \
+ /Users/sotiny/Desktop/os2024_exp/rst/os2024_exp_redo/lab8/src/include/prt_module.h \
+ /Users/sotiny/Desktop/os2024_exp/rst/os2024_exp_redo/lab8/src/include/prt_errno.h \
+ /Users/sotiny/Desktop/os2024_exp/rst/os2024_exp_redo/lab8/src/include/prt_typedef.h \
+ /usr/local/aarch64-none-elf/lib/gcc/aarch64-none-elf/11.2.1/include/stddef.h \
+ /usr/local/aarch64-none-elf/lib/gcc/aarch64-none-elf/11.2.1/include/stdint.h \
+ /usr/local/aarch64-none-elf/aarch64-none-elf/include/stdint.h \
+ /usr/local/aarch64-none-elf/aarch64-none-elf/include/machine/_default_types.h \
+ /usr/local/aarch64-none-elf/aarch64-none-elf/include/sys/features.h \
+ /usr/local/aarch64-none-elf/aarch64-none-elf/include/_newlib_version.h \
+ /usr/local/aarch64-none-elf/aarch64-none-elf/include/sys/_intsup.h \
+ /usr/local/aarch64-none-elf/aarch64-none-elf/include/sys/_stdint.h \
+ /usr/local/aarch64-none-elf/lib/gcc/aarch64-none-elf/11.2.1/include/stdbool.h \
+ /Users/sotiny/Desktop/os2024_exp/rst/os2024_exp_redo/lab8/src/include/prt_task_external.h \
+ /Users/sotiny/Desktop/os2024_exp/rst/os2024_exp_redo/lab8/src/include/prt_task.h \
+ /Users/sotiny/Desktop/os2024_exp/rst/os2024_exp_redo/lab8/src/bsp/os_cpu_armv8.h \
+ /Users/sotiny/Desktop/os2024_exp/rst/os2024_exp_redo/lab8/src/include/prt_typedef.h \
+ /Users/sotiny/Desktop/os2024_exp/rst/os2024_exp_redo/lab8/src/include/list_types.h \
+ /Users/sotiny/Desktop/os2024_exp/rst/os2024_exp_redo/lab8/src/include/prt_list_external.h \
+ /Users/sotiny/Desktop/os2024_exp/rst/os2024_exp_redo/lab8/src/bsp/os_attr_armv8_external.h \
+ /Users/sotiny/Desktop/os2024_exp/rst/os2024_exp_redo/lab8/src/bsp/os_cpu_armv8_external.h

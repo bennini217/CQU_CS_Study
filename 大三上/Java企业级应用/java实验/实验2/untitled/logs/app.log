@@ -1,0 +1,131 @@
+2025-11-16 09:30:26 INFO  - RBAC 权限管理系统已启动。
+2025-11-16 09:30:40 INFO  - RBAC 权限管理系统已启动。
+2025-11-16 10:08:10 INFO  - 系统首次启动，正在初始化核心数据...
+2025-11-16 10:08:10 ERROR - 创建用户时数据库异常: [SQLITE_CONSTRAINT_NOTNULL] A NOT NULL constraint failed (NOT NULL constraint failed: user.salt)
+org.sqlite.SQLiteException: [SQLITE_CONSTRAINT_NOTNULL] A NOT NULL constraint failed (NOT NULL constraint failed: user.salt)
+	at org.sqlite.core.DB.newSQLException(DB.java:1179) ~[sqlite-jdbc-3.45.1.0.jar:?]
+	at org.sqlite.core.DB.newSQLException(DB.java:1190) ~[sqlite-jdbc-3.45.1.0.jar:?]
+	at org.sqlite.core.DB.execute(DB.java:985) ~[sqlite-jdbc-3.45.1.0.jar:?]
+	at org.sqlite.core.DB.executeUpdate(DB.java:1054) ~[sqlite-jdbc-3.45.1.0.jar:?]
+	at org.sqlite.jdbc3.JDBC3PreparedStatement.lambda$executeLargeUpdate$2(JDBC3PreparedStatement.java:129) ~[sqlite-jdbc-3.45.1.0.jar:?]
+	at org.sqlite.jdbc3.JDBC3Statement.withConnectionTimeout(JDBC3Statement.java:454) ~[sqlite-jdbc-3.45.1.0.jar:?]
+	at org.sqlite.jdbc3.JDBC3PreparedStatement.executeLargeUpdate(JDBC3PreparedStatement.java:124) ~[sqlite-jdbc-3.45.1.0.jar:?]
+	at org.sqlite.jdbc3.JDBC3PreparedStatement.executeUpdate(JDBC3PreparedStatement.java:105) ~[sqlite-jdbc-3.45.1.0.jar:?]
+	at com.rbac.dao.impl.UserDaoImpl.createUser(UserDaoImpl.java:36) ~[classes/:?]
+	at com.rbac.service.impl.UserServiceImpl.createUser(UserServiceImpl.java:139) [classes/:?]
+	at com.rbac.Application.initializeSystemData(Application.java:50) [classes/:?]
+	at com.rbac.Application.main(Application.java:77) [classes/:?]
+2025-11-16 10:11:03 INFO  - 系统首次启动，正在初始化核心数据...
+2025-11-16 10:16:13 INFO  - 系统首次启动，正在初始化核心数据...
+2025-11-16 10:16:14 INFO  - RBAC 权限管理系统已启动。
+2025-11-16 10:20:23 INFO  - 系统首次启动，正在初始化核心数据...
+2025-11-16 10:20:23 INFO  - RBAC 权限管理系统已启动。
+2025-11-16 10:31:58 INFO  - 系统首次启动，正在初始化核心数据...
+2025-11-16 10:31:58 INFO  - RBAC 权限管理系统已启动。
+2025-11-16 10:42:40 INFO  - 系统首次启动，正在初始化核心数据...
+2025-11-16 10:42:40 INFO  - RBAC 权限管理系统已启动。
+2025-11-16 10:54:25 INFO  - 正在检查并初始化/迁移系统核心数据...
+2025-11-16 10:54:25 INFO  - 检测到新权限缺失, 正在创建: PERM_USER_MGMT
+2025-11-16 10:54:25 INFO  - 检测到新权限缺失, 正在创建: PERM_ROLE_MGMT
+2025-11-16 10:54:25 INFO  - 检测到新权限缺失, 正在创建: PERM_PERM_MGMT
+2025-11-16 10:54:25 INFO  - 检测到新权限缺失, 正在创建: PERM_USER_ASSIGN_ROLE
+2025-11-16 10:54:25 INFO  - 检测到新权限缺失, 正在创建: PERM_USER_REMOVE_ROLE
+2025-11-16 10:54:25 INFO  - 检测到新权限缺失, 正在创建: PERM_ROLE_ASSIGN_PERM
+2025-11-16 10:54:25 INFO  - 检测到新权限缺失, 正在创建: PERM_ROLE_SET_INHERIT
+2025-11-16 10:54:25 INFO  - 检测到新权限缺失, 正在创建: PERM_USER_LIST
+2025-11-16 10:54:25 INFO  - 创建了 SuperAdmin 角色。
+2025-11-16 10:54:25 INFO  - 核心数据检查完毕，系统准备就绪。
+2025-11-16 10:54:25 INFO  - RBAC 权限管理系统已启动。
+2025-11-16 11:01:51 INFO  - 正在检查并初始化/迁移系统核心数据...
+2025-11-16 11:01:51 INFO  - 核心数据检查完毕，系统准备就绪。
+2025-11-16 11:01:51 INFO  - RBAC 权限管理系统已启动。
+2025-11-19 15:06:31 INFO  - 正在检查并初始化/迁移系统核心数据...
+2025-11-19 15:06:31 INFO  - 核心数据检查完毕，系统准备就绪。
+2025-11-19 15:06:31 INFO  - RBAC 权限管理系统已启动。
+2025-11-19 15:06:33 INFO  - 正在检查并初始化/迁移系统核心数据...
+2025-11-19 15:06:33 INFO  - 核心数据检查完毕，系统准备就绪。
+2025-11-19 15:06:33 INFO  - RBAC 权限管理系统已启动。
+2025-11-19 15:06:36 INFO  - 正在检查并初始化/迁移系统核心数据...
+2025-11-19 15:06:36 INFO  - 核心数据检查完毕，系统准备就绪。
+2025-11-19 15:06:36 INFO  - RBAC 权限管理系统已启动。
+2025-11-19 15:06:38 INFO  - 正在检查并初始化/迁移系统核心数据...
+2025-11-19 15:06:38 INFO  - 核心数据检查完毕，系统准备就绪。
+2025-11-19 15:06:38 INFO  - RBAC 权限管理系统已启动。
+2025-11-19 15:06:40 INFO  - 正在检查并初始化/迁移系统核心数据...
+2025-11-19 15:06:41 INFO  - 核心数据检查完毕，系统准备就绪。
+2025-11-19 15:06:41 INFO  - RBAC 权限管理系统已启动。
+2025-11-19 15:08:34 INFO  - 正在检查并初始化/迁移系统核心数据...
+2025-11-19 15:08:34 INFO  - 检测到新权限缺失, 正在创建: PERM_USER_MGMT
+2025-11-19 15:08:34 INFO  - 检测到新权限缺失, 正在创建: PERM_ROLE_MGMT
+2025-11-19 15:08:34 INFO  - 检测到新权限缺失, 正在创建: PERM_PERM_MGMT
+2025-11-19 15:08:34 INFO  - 检测到新权限缺失, 正在创建: PERM_USER_ASSIGN_ROLE
+2025-11-19 15:08:34 INFO  - 检测到新权限缺失, 正在创建: PERM_USER_REMOVE_ROLE
+2025-11-19 15:08:34 INFO  - 检测到新权限缺失, 正在创建: PERM_ROLE_ASSIGN_PERM
+2025-11-19 15:08:34 INFO  - 检测到新权限缺失, 正在创建: PERM_ROLE_SET_INHERIT
+2025-11-19 15:08:35 INFO  - 检测到新权限缺失, 正在创建: PERM_USER_LIST
+2025-11-19 15:08:35 INFO  - 创建了 SuperAdmin 角色。
+2025-11-19 15:08:35 INFO  - 核心数据检查完毕，系统准备就绪。
+2025-11-19 15:08:35 INFO  - RBAC 权限管理系统已启动。
+2025-11-22 11:57:07 INFO  - 正在检查并初始化/迁移系统核心数据...
+2025-11-22 11:57:07 INFO  - 检测到新权限缺失, 正在创建: PERM_USER_MGMT
+2025-11-22 11:57:07 INFO  - 检测到新权限缺失, 正在创建: PERM_ROLE_MGMT
+2025-11-22 11:57:07 INFO  - 检测到新权限缺失, 正在创建: PERM_PERM_MGMT
+2025-11-22 11:57:07 INFO  - 检测到新权限缺失, 正在创建: PERM_USER_ASSIGN_ROLE
+2025-11-22 11:57:07 INFO  - 检测到新权限缺失, 正在创建: PERM_USER_REMOVE_ROLE
+2025-11-22 11:57:07 INFO  - 检测到新权限缺失, 正在创建: PERM_ROLE_ASSIGN_PERM
+2025-11-22 11:57:07 INFO  - 检测到新权限缺失, 正在创建: PERM_ROLE_SET_INHERIT
+2025-11-22 11:57:07 INFO  - 检测到新权限缺失, 正在创建: PERM_USER_LIST
+2025-11-22 11:57:07 INFO  - 创建了 SuperAdmin 角色。
+2025-11-22 11:57:07 INFO  - 核心数据检查完毕，系统准备就绪。
+2025-11-22 11:57:07 INFO  - RBAC 权限管理系统已启动。
+2025-11-22 11:57:44 INFO  - 正在检查并初始化/迁移系统核心数据...
+2025-11-22 11:57:45 INFO  - 核心数据检查完毕，系统准备就绪。
+2025-11-22 11:57:45 INFO  - RBAC 权限管理系统已启动。
+2025-11-22 11:58:03 INFO  - 正在检查并初始化/迁移系统核心数据...
+2025-11-22 11:58:03 INFO  - 检测到新权限缺失, 正在创建: PERM_USER_MGMT
+2025-11-22 11:58:03 INFO  - 检测到新权限缺失, 正在创建: PERM_ROLE_MGMT
+2025-11-22 11:58:03 INFO  - 检测到新权限缺失, 正在创建: PERM_PERM_MGMT
+2025-11-22 11:58:03 INFO  - 检测到新权限缺失, 正在创建: PERM_USER_ASSIGN_ROLE
+2025-11-22 11:58:03 INFO  - 检测到新权限缺失, 正在创建: PERM_USER_REMOVE_ROLE
+2025-11-22 11:58:03 INFO  - 检测到新权限缺失, 正在创建: PERM_ROLE_ASSIGN_PERM
+2025-11-22 11:58:03 INFO  - 检测到新权限缺失, 正在创建: PERM_ROLE_SET_INHERIT
+2025-11-22 11:58:03 INFO  - 检测到新权限缺失, 正在创建: PERM_USER_LIST
+2025-11-22 11:58:03 INFO  - 创建了 SuperAdmin 角色。
+2025-11-22 11:58:04 INFO  - 核心数据检查完毕，系统准备就绪。
+2025-11-22 11:58:04 INFO  - RBAC 权限管理系统已启动。
+2025-11-22 11:59:27 INFO  - 正在检查并初始化/迁移系统核心数据...
+2025-11-22 11:59:27 INFO  - 检测到新权限缺失, 正在创建: PERM_USER_MGMT
+2025-11-22 11:59:27 INFO  - 检测到新权限缺失, 正在创建: PERM_ROLE_MGMT
+2025-11-22 11:59:27 INFO  - 检测到新权限缺失, 正在创建: PERM_PERM_MGMT
+2025-11-22 11:59:27 INFO  - 检测到新权限缺失, 正在创建: PERM_USER_ASSIGN_ROLE
+2025-11-22 11:59:27 INFO  - 检测到新权限缺失, 正在创建: PERM_USER_REMOVE_ROLE
+2025-11-22 11:59:27 INFO  - 检测到新权限缺失, 正在创建: PERM_ROLE_ASSIGN_PERM
+2025-11-22 11:59:27 INFO  - 检测到新权限缺失, 正在创建: PERM_ROLE_SET_INHERIT
+2025-11-22 11:59:27 INFO  - 检测到新权限缺失, 正在创建: PERM_USER_LIST
+2025-11-22 11:59:28 INFO  - 创建了 SuperAdmin 角色。
+2025-11-22 11:59:28 INFO  - 核心数据检查完毕，系统准备就绪。
+2025-11-22 11:59:28 INFO  - RBAC 权限管理系统已启动。
+2025-11-22 12:00:17 INFO  - 正在检查并初始化/迁移系统核心数据...
+2025-11-22 12:00:17 INFO  - 检测到新权限缺失, 正在创建: PERM_USER_MGMT
+2025-11-22 12:00:17 INFO  - 检测到新权限缺失, 正在创建: PERM_ROLE_MGMT
+2025-11-22 12:00:17 INFO  - 检测到新权限缺失, 正在创建: PERM_PERM_MGMT
+2025-11-22 12:00:17 INFO  - 检测到新权限缺失, 正在创建: PERM_USER_ASSIGN_ROLE
+2025-11-22 12:00:17 INFO  - 检测到新权限缺失, 正在创建: PERM_USER_REMOVE_ROLE
+2025-11-22 12:00:17 INFO  - 检测到新权限缺失, 正在创建: PERM_ROLE_ASSIGN_PERM
+2025-11-22 12:00:17 INFO  - 检测到新权限缺失, 正在创建: PERM_ROLE_SET_INHERIT
+2025-11-22 12:00:17 INFO  - 检测到新权限缺失, 正在创建: PERM_USER_LIST
+2025-11-22 12:00:17 INFO  - 创建了 SuperAdmin 角色。
+2025-11-22 12:00:18 INFO  - 核心数据检查完毕，系统准备就绪。
+2025-11-22 12:00:18 INFO  - RBAC 权限管理系统已启动。
+2025-11-22 12:13:10 INFO  - 正在检查并初始化/迁移系统核心数据...
+2025-11-22 12:13:10 INFO  - 检测到新权限缺失, 正在创建: PERM_USER_MGMT
+2025-11-22 12:13:10 INFO  - 检测到新权限缺失, 正在创建: PERM_ROLE_MGMT
+2025-11-22 12:13:10 INFO  - 检测到新权限缺失, 正在创建: PERM_PERM_MGMT
+2025-11-22 12:13:10 INFO  - 检测到新权限缺失, 正在创建: PERM_USER_ASSIGN_ROLE
+2025-11-22 12:13:10 INFO  - 检测到新权限缺失, 正在创建: PERM_USER_REMOVE_ROLE
+2025-11-22 12:13:10 INFO  - 检测到新权限缺失, 正在创建: PERM_ROLE_ASSIGN_PERM
+2025-11-22 12:13:10 INFO  - 检测到新权限缺失, 正在创建: PERM_ROLE_SET_INHERIT
+2025-11-22 12:13:10 INFO  - 检测到新权限缺失, 正在创建: PERM_USER_LIST
+2025-11-22 12:13:10 INFO  - 创建了 SuperAdmin 角色。
+2025-11-22 12:13:10 INFO  - 核心数据检查完毕，系统准备就绪。
+2025-11-22 12:13:10 INFO  - RBAC 权限管理系统已启动。

@@ -1,0 +1,201 @@
+The target system is: Generic -  - aarch64
+The host system is: Linux - 6.12.13-200.fc41.aarch64 - x86_64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: /opt/buildtools/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf/bin/aarch64-none-elf-gcc 
+Build flags: -Os;;;-Wformat-signedness;;;;-Wl,--build-id=none;;;-fno-PIE;-fno-PIE;--specs=nosys.specs;-fno-builtin;-fno-dwarf2-cfi-asm;-fomit-frame-pointer;-fzero-initialized-in-bss;-fdollars-in-identifiers;-ffunction-sections;-fdata-sections;-fno-aggressive-loop-optimizations;-fno-optimize-strlen;-fno-schedule-insns;-fno-inline-small-functions;-fno-inline-functions-called-once;-fno-strict-aliasing;-finline-limit=20;;-mlittle-endian;-nostartfiles;-funwind-tables;
+Id flags:  
+
+The output was:
+0
+/opt/buildtools/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf/bin/../lib/gcc/aarch64-none-elf/10.3.1/../../../../aarch64-none-elf/bin/ld: warning: cannot find entry symbol _start; defaulting to 0000000000400000
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+
+The C compiler identification is GNU, found in "/home/uniproton/lab1/build/CMakeFiles/3.22.0/CompilerIdC/a.out"
+
+Checking whether the ASM compiler is GNU using "--version" matched "(GNU assembler)|(GCC)|(Free Software Foundation)":
+aarch64-none-elf-gcc (GNU Toolchain for the A-profile Architecture 10.3-2021.07 (arm-10.29)) 10.3.1 20210621
+Copyright (C) 2020 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: /home/uniproton/lab1/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_c5b23/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_c5b23.dir/build.make CMakeFiles/cmTC_c5b23.dir/build
+gmake[1]: Entering directory '/home/uniproton/lab1/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_c5b23.dir/CMakeCCompilerABI.c.obj
+/opt/buildtools/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf/bin/aarch64-none-elf-gcc   -Os   -Wformat-signedness    -Wl,--build-id=none   -fno-PIE -fno-PIE --specs=nosys.specs -fno-builtin -fno-dwarf2-cfi-asm -fomit-frame-pointer -fzero-initialized-in-bss -fdollars-in-identifiers -ffunction-sections -fdata-sections -fno-aggressive-loop-optimizations -fno-optimize-strlen -fno-schedule-insns -fno-inline-small-functions -fno-inline-functions-called-once -fno-strict-aliasing -finline-limit=20  -mlittle-endian -nostartfiles -funwind-tables     -v -o CMakeFiles/cmTC_c5b23.dir/CMakeCCompilerABI.c.obj -c /usr/share/cmake/Modules/CMakeCCompilerABI.c
+Using built-in specs.
+Reading specs from /opt/buildtools/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf/bin/../lib/gcc/aarch64-none-elf/10.3.1/../../../../aarch64-none-elf/lib/nosys.specs
+rename spec link_gcc_c_sequence to nosys_link_gcc_c_sequence
+COLLECT_GCC=/opt/buildtools/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf/bin/aarch64-none-elf-gcc
+Target: aarch64-none-elf
+Configured with: /data/jenkins/workspace/GNU-toolchain/arm-10/src/gcc/configure --target=aarch64-none-elf --prefix=/data/jenkins/workspace/GNU-toolchain/arm-10/build-aarch64-none-elf/install// --with-gmp=/data/jenkins/workspace/GNU-toolchain/arm-10/build-aarch64-none-elf/host-tools --with-mpfr=/data/jenkins/workspace/GNU-toolchain/arm-10/build-aarch64-none-elf/host-tools --with-mpc=/data/jenkins/workspace/GNU-toolchain/arm-10/build-aarch64-none-elf/host-tools --with-isl=/data/jenkins/workspace/GNU-toolchain/arm-10/build-aarch64-none-elf/host-tools --disable-shared --disable-nls --disable-threads --disable-tls --enable-checking=release --enable-languages=c,c++,fortran --with-newlib --with-pkgversion='GNU Toolchain for the A-profile Architecture 10.3-2021.07 (arm-10.29)' --with-bugurl=https://bugs.linaro.org/
+Thread model: single
+Supported LTO compression algorithms: zlib
+gcc version 10.3.1 20210621 (GNU Toolchain for the A-profile Architecture 10.3-2021.07 (arm-10.29)) 
+COLLECT_GCC_OPTIONS='-Os' '-Wformat-signedness' '-fno-PIE' '-specs=nosys.specs' '-fno-builtin' '-fno-dwarf2-cfi-asm' '-fomit-frame-pointer' '-fzero-initialized-in-bss' '-fdollars-in-identifiers' '-ffunction-sections' '-fdata-sections' '-fno-aggressive-loop-optimizations' '-fno-optimize-strlen' '-fno-schedule-insns' '-fno-inline-small-functions' '-fno-inline-functions-called-once' '-fno-strict-aliasing' '-finline-limit=20' '-mlittle-endian' '-nostartfiles' '-funwind-tables' '-v' '-o' 'CMakeFiles/cmTC_c5b23.dir/CMakeCCompilerABI.c.obj' '-c' '-mabi=lp64'
+ /opt/buildtools/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf/bin/../libexec/gcc/aarch64-none-elf/10.3.1/cc1 -quiet -v -iprefix /opt/buildtools/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf/bin/../lib/gcc/aarch64-none-elf/10.3.1/ /usr/share/cmake/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mlittle-endian -mabi=lp64 -auxbase-strip CMakeFiles/cmTC_c5b23.dir/CMakeCCompilerABI.c.obj -Os -Wformat-signedness -version -fno-PIE -fno-builtin -fno-dwarf2-cfi-asm -fomit-frame-pointer -fzero-initialized-in-bss -fdollars-in-identifiers -ffunction-sections -fdata-sections -fno-aggressive-loop-optimizations -fno-optimize-strlen -fno-schedule-insns -fno-inline-small-functions -fno-inline-functions-called-once -fno-strict-aliasing -finline-limit=20 -funwind-tables -o /tmp/ccpEGVFu.s
+GNU C17 (GNU Toolchain for the A-profile Architecture 10.3-2021.07 (arm-10.29)) version 10.3.1 20210621 (aarch64-none-elf)
+	compiled by GNU C version 4.8.5 20150623 (Red Hat 4.8.5-44), GMP version 4.3.2, MPFR version 3.1.6, MPC version 1.0.3, isl version isl-0.15-1-g835ea3a-GMP
+
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+ignoring nonexistent directory "/opt/buildtools/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf/bin/../lib/gcc/aarch64-none-elf/10.3.1/../../../../aarch64-none-elf/sys-include"
+ignoring duplicate directory "/opt/buildtools/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf/bin/../lib/gcc/../../lib/gcc/aarch64-none-elf/10.3.1/include"
+ignoring duplicate directory "/opt/buildtools/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf/bin/../lib/gcc/../../lib/gcc/aarch64-none-elf/10.3.1/include-fixed"
+ignoring nonexistent directory "/opt/buildtools/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf/bin/../lib/gcc/../../lib/gcc/aarch64-none-elf/10.3.1/../../../../aarch64-none-elf/sys-include"
+ignoring duplicate directory "/opt/buildtools/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf/bin/../lib/gcc/../../lib/gcc/aarch64-none-elf/10.3.1/../../../../aarch64-none-elf/include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /opt/buildtools/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf/bin/../lib/gcc/aarch64-none-elf/10.3.1/include
+ /opt/buildtools/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf/bin/../lib/gcc/aarch64-none-elf/10.3.1/include-fixed
+ /opt/buildtools/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf/bin/../lib/gcc/aarch64-none-elf/10.3.1/../../../../aarch64-none-elf/include
+End of search list.
+GNU C17 (GNU Toolchain for the A-profile Architecture 10.3-2021.07 (arm-10.29)) version 10.3.1 20210621 (aarch64-none-elf)
+	compiled by GNU C version 4.8.5 20150623 (Red Hat 4.8.5-44), GMP version 4.3.2, MPFR version 3.1.6, MPC version 1.0.3, isl version isl-0.15-1-g835ea3a-GMP
+
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+Compiler executable checksum: ae03bd326c2951a256d0ae640df47acb
+COLLECT_GCC_OPTIONS='-Os' '-Wformat-signedness' '-fno-PIE' '-specs=nosys.specs' '-fno-builtin' '-fno-dwarf2-cfi-asm' '-fomit-frame-pointer' '-fzero-initialized-in-bss' '-fdollars-in-identifiers' '-ffunction-sections' '-fdata-sections' '-fno-aggressive-loop-optimizations' '-fno-optimize-strlen' '-fno-schedule-insns' '-fno-inline-small-functions' '-fno-inline-functions-called-once' '-fno-strict-aliasing' '-finline-limit=20' '-mlittle-endian' '-nostartfiles' '-funwind-tables' '-v' '-o' 'CMakeFiles/cmTC_c5b23.dir/CMakeCCompilerABI.c.obj' '-c' '-mabi=lp64'
+ /opt/buildtools/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf/bin/../lib/gcc/aarch64-none-elf/10.3.1/../../../../aarch64-none-elf/bin/as -EL -mabi=lp64 -o CMakeFiles/cmTC_c5b23.dir/CMakeCCompilerABI.c.obj /tmp/ccpEGVFu.s
+COMPILER_PATH=/opt/buildtools/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf/bin/../libexec/gcc/aarch64-none-elf/10.3.1/:/opt/buildtools/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf/bin/../libexec/gcc/:/opt/buildtools/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf/bin/../lib/gcc/aarch64-none-elf/10.3.1/../../../../aarch64-none-elf/bin/
+LIBRARY_PATH=/opt/buildtools/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf/bin/../lib/gcc/aarch64-none-elf/10.3.1/:/opt/buildtools/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf/bin/../lib/gcc/:/opt/buildtools/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf/bin/../lib/gcc/aarch64-none-elf/10.3.1/../../../../aarch64-none-elf/lib/
+COLLECT_GCC_OPTIONS='-Os' '-Wformat-signedness' '-fno-PIE' '-specs=nosys.specs' '-fno-builtin' '-fno-dwarf2-cfi-asm' '-fomit-frame-pointer' '-fzero-initialized-in-bss' '-fdollars-in-identifiers' '-ffunction-sections' '-fdata-sections' '-fno-aggressive-loop-optimizations' '-fno-optimize-strlen' '-fno-schedule-insns' '-fno-inline-small-functions' '-fno-inline-functions-called-once' '-fno-strict-aliasing' '-finline-limit=20' '-mlittle-endian' '-nostartfiles' '-funwind-tables' '-v' '-o' 'CMakeFiles/cmTC_c5b23.dir/CMakeCCompilerABI.c.obj' '-c' '-mabi=lp64'
+Linking C executable cmTC_c5b23
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c5b23.dir/link.txt --verbose=1
+/opt/buildtools/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf/bin/aarch64-none-elf-gcc -Os   -Wformat-signedness    -Wl,--build-id=none   -fno-PIE -fno-PIE --specs=nosys.specs -fno-builtin -fno-dwarf2-cfi-asm -fomit-frame-pointer -fzero-initialized-in-bss -fdollars-in-identifiers -ffunction-sections -fdata-sections -fno-aggressive-loop-optimizations -fno-optimize-strlen -fno-schedule-insns -fno-inline-small-functions -fno-inline-functions-called-once -fno-strict-aliasing -finline-limit=20  -mlittle-endian -nostartfiles -funwind-tables     -T /home/uniproton/lab1/src/aarch64-kp.ld -v CMakeFiles/cmTC_c5b23.dir/CMakeCCompilerABI.c.obj -o cmTC_c5b23 
+Using built-in specs.
+Reading specs from /opt/buildtools/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf/bin/../lib/gcc/aarch64-none-elf/10.3.1/../../../../aarch64-none-elf/lib/nosys.specs
+rename spec link_gcc_c_sequence to nosys_link_gcc_c_sequence
+COLLECT_GCC=/opt/buildtools/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf/bin/aarch64-none-elf-gcc
+COLLECT_LTO_WRAPPER=/opt/buildtools/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf/bin/../libexec/gcc/aarch64-none-elf/10.3.1/lto-wrapper
+Target: aarch64-none-elf
+Configured with: /data/jenkins/workspace/GNU-toolchain/arm-10/src/gcc/configure --target=aarch64-none-elf --prefix=/data/jenkins/workspace/GNU-toolchain/arm-10/build-aarch64-none-elf/install// --with-gmp=/data/jenkins/workspace/GNU-toolchain/arm-10/build-aarch64-none-elf/host-tools --with-mpfr=/data/jenkins/workspace/GNU-toolchain/arm-10/build-aarch64-none-elf/host-tools --with-mpc=/data/jenkins/workspace/GNU-toolchain/arm-10/build-aarch64-none-elf/host-tools --with-isl=/data/jenkins/workspace/GNU-toolchain/arm-10/build-aarch64-none-elf/host-tools --disable-shared --disable-nls --disable-threads --disable-tls --enable-checking=release --enable-languages=c,c++,fortran --with-newlib --with-pkgversion='GNU Toolchain for the A-profile Architecture 10.3-2021.07 (arm-10.29)' --with-bugurl=https://bugs.linaro.org/
+Thread model: single
+Supported LTO compression algorithms: zlib
+gcc version 10.3.1 20210621 (GNU Toolchain for the A-profile Architecture 10.3-2021.07 (arm-10.29)) 
+COMPILER_PATH=/opt/buildtools/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf/bin/../libexec/gcc/aarch64-none-elf/10.3.1/:/opt/buildtools/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf/bin/../libexec/gcc/:/opt/buildtools/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf/bin/../lib/gcc/aarch64-none-elf/10.3.1/../../../../aarch64-none-elf/bin/
+LIBRARY_PATH=/opt/buildtools/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf/bin/../lib/gcc/aarch64-none-elf/10.3.1/:/opt/buildtools/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf/bin/../lib/gcc/:/opt/buildtools/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf/bin/../lib/gcc/aarch64-none-elf/10.3.1/../../../../aarch64-none-elf/lib/
+COLLECT_GCC_OPTIONS='-Os' '-Wformat-signedness' '-fno-PIE' '-specs=nosys.specs' '-fno-builtin' '-fno-dwarf2-cfi-asm' '-fomit-frame-pointer' '-fzero-initialized-in-bss' '-fdollars-in-identifiers' '-ffunction-sections' '-fdata-sections' '-fno-aggressive-loop-optimizations' '-fno-optimize-strlen' '-fno-schedule-insns' '-fno-inline-small-functions' '-fno-inline-functions-called-once' '-fno-strict-aliasing' '-finline-limit=20' '-mlittle-endian' '-nostartfiles' '-funwind-tables' '-T' '/home/uniproton/lab1/src/aarch64-kp.ld' '-v' '-o' 'cmTC_c5b23' '-mabi=lp64'
+ /opt/buildtools/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf/bin/../libexec/gcc/aarch64-none-elf/10.3.1/collect2 -plugin /opt/buildtools/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf/bin/../libexec/gcc/aarch64-none-elf/10.3.1/liblto_plugin.so -plugin-opt=/opt/buildtools/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf/bin/../libexec/gcc/aarch64-none-elf/10.3.1/lto-wrapper -plugin-opt=-fresolution=/tmp/cci9lTnG.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lnosys -EL -X -maarch64elf -o cmTC_c5b23 -L/opt/buildtools/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf/bin/../lib/gcc/aarch64-none-elf/10.3.1 -L/opt/buildtools/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf/bin/../lib/gcc -L/opt/buildtools/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf/bin/../lib/gcc/aarch64-none-elf/10.3.1/../../../../aarch64-none-elf/lib --build-id=none CMakeFiles/cmTC_c5b23.dir/CMakeCCompilerABI.c.obj -lgcc -lc -lgcc --start-group -lgcc -lc -lnosys --end-group -T /home/uniproton/lab1/src/aarch64-kp.ld
+COLLECT_GCC_OPTIONS='-Os' '-Wformat-signedness' '-fno-PIE' '-specs=nosys.specs' '-fno-builtin' '-fno-dwarf2-cfi-asm' '-fomit-frame-pointer' '-fzero-initialized-in-bss' '-fdollars-in-identifiers' '-ffunction-sections' '-fdata-sections' '-fno-aggressive-loop-optimizations' '-fno-optimize-strlen' '-fno-schedule-insns' '-fno-inline-small-functions' '-fno-inline-functions-called-once' '-fno-strict-aliasing' '-finline-limit=20' '-mlittle-endian' '-nostartfiles' '-funwind-tables' '-T' '/home/uniproton/lab1/src/aarch64-kp.ld' '-v' '-o' 'cmTC_c5b23' '-mabi=lp64'
+gmake[1]: Leaving directory '/home/uniproton/lab1/build/CMakeFiles/CMakeTmp'
+
+
+
+Parsed C implicit include dir info from above output: rv=done
+  found start of include info
+  found start of implicit include info
+    add: [/opt/buildtools/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf/bin/../lib/gcc/aarch64-none-elf/10.3.1/include]
+    add: [/opt/buildtools/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf/bin/../lib/gcc/aarch64-none-elf/10.3.1/include-fixed]
+    add: [/opt/buildtools/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf/bin/../lib/gcc/aarch64-none-elf/10.3.1/../../../../aarch64-none-elf/include]
+  end of search list found
+  collapse include dir [/opt/buildtools/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf/bin/../lib/gcc/aarch64-none-elf/10.3.1/include] ==> [/opt/buildtools/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf/lib/gcc/aarch64-none-elf/10.3.1/include]
+  collapse include dir [/opt/buildtools/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf/bin/../lib/gcc/aarch64-none-elf/10.3.1/include-fixed] ==> [/opt/buildtools/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf/lib/gcc/aarch64-none-elf/10.3.1/include-fixed]
+  collapse include dir [/opt/buildtools/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf/bin/../lib/gcc/aarch64-none-elf/10.3.1/../../../../aarch64-none-elf/include] ==> [/opt/buildtools/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf/aarch64-none-elf/include]
+  implicit include dirs: [/opt/buildtools/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf/lib/gcc/aarch64-none-elf/10.3.1/include;/opt/buildtools/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf/lib/gcc/aarch64-none-elf/10.3.1/include-fixed;/opt/buildtools/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf/aarch64-none-elf/include]
+
+
+Parsed C implicit link information from above output:
+  link line regex: [^( *|.*[/\])(aarch64-none-elf-ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /home/uniproton/lab1/build/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_c5b23/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_c5b23.dir/build.make CMakeFiles/cmTC_c5b23.dir/build]
+  ignore line: [gmake[1]: Entering directory '/home/uniproton/lab1/build/CMakeFiles/CMakeTmp']
+  ignore line: [Building C object CMakeFiles/cmTC_c5b23.dir/CMakeCCompilerABI.c.obj]
+  ignore line: [/opt/buildtools/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf/bin/aarch64-none-elf-gcc   -Os   -Wformat-signedness    -Wl --build-id=none   -fno-PIE -fno-PIE --specs=nosys.specs -fno-builtin -fno-dwarf2-cfi-asm -fomit-frame-pointer -fzero-initialized-in-bss -fdollars-in-identifiers -ffunction-sections -fdata-sections -fno-aggressive-loop-optimizations -fno-optimize-strlen -fno-schedule-insns -fno-inline-small-functions -fno-inline-functions-called-once -fno-strict-aliasing -finline-limit=20  -mlittle-endian -nostartfiles -funwind-tables     -v -o CMakeFiles/cmTC_c5b23.dir/CMakeCCompilerABI.c.obj -c /usr/share/cmake/Modules/CMakeCCompilerABI.c]
+  ignore line: [Using built-in specs.]
+  ignore line: [Reading specs from /opt/buildtools/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf/bin/../lib/gcc/aarch64-none-elf/10.3.1/../../../../aarch64-none-elf/lib/nosys.specs]
+  ignore line: [rename spec link_gcc_c_sequence to nosys_link_gcc_c_sequence]
+  ignore line: [COLLECT_GCC=/opt/buildtools/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf/bin/aarch64-none-elf-gcc]
+  ignore line: [Target: aarch64-none-elf]
+  ignore line: [Configured with: /data/jenkins/workspace/GNU-toolchain/arm-10/src/gcc/configure --target=aarch64-none-elf --prefix=/data/jenkins/workspace/GNU-toolchain/arm-10/build-aarch64-none-elf/install// --with-gmp=/data/jenkins/workspace/GNU-toolchain/arm-10/build-aarch64-none-elf/host-tools --with-mpfr=/data/jenkins/workspace/GNU-toolchain/arm-10/build-aarch64-none-elf/host-tools --with-mpc=/data/jenkins/workspace/GNU-toolchain/arm-10/build-aarch64-none-elf/host-tools --with-isl=/data/jenkins/workspace/GNU-toolchain/arm-10/build-aarch64-none-elf/host-tools --disable-shared --disable-nls --disable-threads --disable-tls --enable-checking=release --enable-languages=c c++ fortran --with-newlib --with-pkgversion='GNU Toolchain for the A-profile Architecture 10.3-2021.07 (arm-10.29)' --with-bugurl=https://bugs.linaro.org/]
+  ignore line: [Thread model: single]
+  ignore line: [Supported LTO compression algorithms: zlib]
+  ignore line: [gcc version 10.3.1 20210621 (GNU Toolchain for the A-profile Architecture 10.3-2021.07 (arm-10.29)) ]
+  ignore line: [COLLECT_GCC_OPTIONS='-Os' '-Wformat-signedness' '-fno-PIE' '-specs=nosys.specs' '-fno-builtin' '-fno-dwarf2-cfi-asm' '-fomit-frame-pointer' '-fzero-initialized-in-bss' '-fdollars-in-identifiers' '-ffunction-sections' '-fdata-sections' '-fno-aggressive-loop-optimizations' '-fno-optimize-strlen' '-fno-schedule-insns' '-fno-inline-small-functions' '-fno-inline-functions-called-once' '-fno-strict-aliasing' '-finline-limit=20' '-mlittle-endian' '-nostartfiles' '-funwind-tables' '-v' '-o' 'CMakeFiles/cmTC_c5b23.dir/CMakeCCompilerABI.c.obj' '-c' '-mabi=lp64']
+  ignore line: [ /opt/buildtools/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf/bin/../libexec/gcc/aarch64-none-elf/10.3.1/cc1 -quiet -v -iprefix /opt/buildtools/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf/bin/../lib/gcc/aarch64-none-elf/10.3.1/ /usr/share/cmake/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mlittle-endian -mabi=lp64 -auxbase-strip CMakeFiles/cmTC_c5b23.dir/CMakeCCompilerABI.c.obj -Os -Wformat-signedness -version -fno-PIE -fno-builtin -fno-dwarf2-cfi-asm -fomit-frame-pointer -fzero-initialized-in-bss -fdollars-in-identifiers -ffunction-sections -fdata-sections -fno-aggressive-loop-optimizations -fno-optimize-strlen -fno-schedule-insns -fno-inline-small-functions -fno-inline-functions-called-once -fno-strict-aliasing -finline-limit=20 -funwind-tables -o /tmp/ccpEGVFu.s]
+  ignore line: [GNU C17 (GNU Toolchain for the A-profile Architecture 10.3-2021.07 (arm-10.29)) version 10.3.1 20210621 (aarch64-none-elf)]
+  ignore line: [	compiled by GNU C version 4.8.5 20150623 (Red Hat 4.8.5-44)  GMP version 4.3.2  MPFR version 3.1.6  MPC version 1.0.3  isl version isl-0.15-1-g835ea3a-GMP]
+  ignore line: []
+  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+  ignore line: [ignoring nonexistent directory "/opt/buildtools/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf/bin/../lib/gcc/aarch64-none-elf/10.3.1/../../../../aarch64-none-elf/sys-include"]
+  ignore line: [ignoring duplicate directory "/opt/buildtools/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf/bin/../lib/gcc/../../lib/gcc/aarch64-none-elf/10.3.1/include"]
+  ignore line: [ignoring duplicate directory "/opt/buildtools/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf/bin/../lib/gcc/../../lib/gcc/aarch64-none-elf/10.3.1/include-fixed"]
+  ignore line: [ignoring nonexistent directory "/opt/buildtools/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf/bin/../lib/gcc/../../lib/gcc/aarch64-none-elf/10.3.1/../../../../aarch64-none-elf/sys-include"]
+  ignore line: [ignoring duplicate directory "/opt/buildtools/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf/bin/../lib/gcc/../../lib/gcc/aarch64-none-elf/10.3.1/../../../../aarch64-none-elf/include"]
+  ignore line: [#include "..." search starts here:]
+  ignore line: [#include <...> search starts here:]
+  ignore line: [ /opt/buildtools/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf/bin/../lib/gcc/aarch64-none-elf/10.3.1/include]
+  ignore line: [ /opt/buildtools/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf/bin/../lib/gcc/aarch64-none-elf/10.3.1/include-fixed]
+  ignore line: [ /opt/buildtools/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf/bin/../lib/gcc/aarch64-none-elf/10.3.1/../../../../aarch64-none-elf/include]
+  ignore line: [End of search list.]
+  ignore line: [GNU C17 (GNU Toolchain for the A-profile Architecture 10.3-2021.07 (arm-10.29)) version 10.3.1 20210621 (aarch64-none-elf)]
+  ignore line: [	compiled by GNU C version 4.8.5 20150623 (Red Hat 4.8.5-44)  GMP version 4.3.2  MPFR version 3.1.6  MPC version 1.0.3  isl version isl-0.15-1-g835ea3a-GMP]
+  ignore line: []
+  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+  ignore line: [Compiler executable checksum: ae03bd326c2951a256d0ae640df47acb]
+  ignore line: [COLLECT_GCC_OPTIONS='-Os' '-Wformat-signedness' '-fno-PIE' '-specs=nosys.specs' '-fno-builtin' '-fno-dwarf2-cfi-asm' '-fomit-frame-pointer' '-fzero-initialized-in-bss' '-fdollars-in-identifiers' '-ffunction-sections' '-fdata-sections' '-fno-aggressive-loop-optimizations' '-fno-optimize-strlen' '-fno-schedule-insns' '-fno-inline-small-functions' '-fno-inline-functions-called-once' '-fno-strict-aliasing' '-finline-limit=20' '-mlittle-endian' '-nostartfiles' '-funwind-tables' '-v' '-o' 'CMakeFiles/cmTC_c5b23.dir/CMakeCCompilerABI.c.obj' '-c' '-mabi=lp64']
+  ignore line: [ /opt/buildtools/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf/bin/../lib/gcc/aarch64-none-elf/10.3.1/../../../../aarch64-none-elf/bin/as -EL -mabi=lp64 -o CMakeFiles/cmTC_c5b23.dir/CMakeCCompilerABI.c.obj /tmp/ccpEGVFu.s]
+  ignore line: [COMPILER_PATH=/opt/buildtools/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf/bin/../libexec/gcc/aarch64-none-elf/10.3.1/:/opt/buildtools/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf/bin/../libexec/gcc/:/opt/buildtools/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf/bin/../lib/gcc/aarch64-none-elf/10.3.1/../../../../aarch64-none-elf/bin/]
+  ignore line: [LIBRARY_PATH=/opt/buildtools/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf/bin/../lib/gcc/aarch64-none-elf/10.3.1/:/opt/buildtools/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf/bin/../lib/gcc/:/opt/buildtools/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf/bin/../lib/gcc/aarch64-none-elf/10.3.1/../../../../aarch64-none-elf/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-Os' '-Wformat-signedness' '-fno-PIE' '-specs=nosys.specs' '-fno-builtin' '-fno-dwarf2-cfi-asm' '-fomit-frame-pointer' '-fzero-initialized-in-bss' '-fdollars-in-identifiers' '-ffunction-sections' '-fdata-sections' '-fno-aggressive-loop-optimizations' '-fno-optimize-strlen' '-fno-schedule-insns' '-fno-inline-small-functions' '-fno-inline-functions-called-once' '-fno-strict-aliasing' '-finline-limit=20' '-mlittle-endian' '-nostartfiles' '-funwind-tables' '-v' '-o' 'CMakeFiles/cmTC_c5b23.dir/CMakeCCompilerABI.c.obj' '-c' '-mabi=lp64']
+  ignore line: [Linking C executable cmTC_c5b23]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c5b23.dir/link.txt --verbose=1]
+  ignore line: [/opt/buildtools/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf/bin/aarch64-none-elf-gcc -Os   -Wformat-signedness    -Wl --build-id=none   -fno-PIE -fno-PIE --specs=nosys.specs -fno-builtin -fno-dwarf2-cfi-asm -fomit-frame-pointer -fzero-initialized-in-bss -fdollars-in-identifiers -ffunction-sections -fdata-sections -fno-aggressive-loop-optimizations -fno-optimize-strlen -fno-schedule-insns -fno-inline-small-functions -fno-inline-functions-called-once -fno-strict-aliasing -finline-limit=20  -mlittle-endian -nostartfiles -funwind-tables     -T /home/uniproton/lab1/src/aarch64-kp.ld -v CMakeFiles/cmTC_c5b23.dir/CMakeCCompilerABI.c.obj -o cmTC_c5b23 ]
+  ignore line: [Using built-in specs.]
+  ignore line: [Reading specs from /opt/buildtools/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf/bin/../lib/gcc/aarch64-none-elf/10.3.1/../../../../aarch64-none-elf/lib/nosys.specs]
+  ignore line: [rename spec link_gcc_c_sequence to nosys_link_gcc_c_sequence]
+  ignore line: [COLLECT_GCC=/opt/buildtools/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf/bin/aarch64-none-elf-gcc]
+  ignore line: [COLLECT_LTO_WRAPPER=/opt/buildtools/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf/bin/../libexec/gcc/aarch64-none-elf/10.3.1/lto-wrapper]
+  ignore line: [Target: aarch64-none-elf]
+  ignore line: [Configured with: /data/jenkins/workspace/GNU-toolchain/arm-10/src/gcc/configure --target=aarch64-none-elf --prefix=/data/jenkins/workspace/GNU-toolchain/arm-10/build-aarch64-none-elf/install// --with-gmp=/data/jenkins/workspace/GNU-toolchain/arm-10/build-aarch64-none-elf/host-tools --with-mpfr=/data/jenkins/workspace/GNU-toolchain/arm-10/build-aarch64-none-elf/host-tools --with-mpc=/data/jenkins/workspace/GNU-toolchain/arm-10/build-aarch64-none-elf/host-tools --with-isl=/data/jenkins/workspace/GNU-toolchain/arm-10/build-aarch64-none-elf/host-tools --disable-shared --disable-nls --disable-threads --disable-tls --enable-checking=release --enable-languages=c c++ fortran --with-newlib --with-pkgversion='GNU Toolchain for the A-profile Architecture 10.3-2021.07 (arm-10.29)' --with-bugurl=https://bugs.linaro.org/]
+  ignore line: [Thread model: single]
+  ignore line: [Supported LTO compression algorithms: zlib]
+  ignore line: [gcc version 10.3.1 20210621 (GNU Toolchain for the A-profile Architecture 10.3-2021.07 (arm-10.29)) ]
+  ignore line: [COMPILER_PATH=/opt/buildtools/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf/bin/../libexec/gcc/aarch64-none-elf/10.3.1/:/opt/buildtools/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf/bin/../libexec/gcc/:/opt/buildtools/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf/bin/../lib/gcc/aarch64-none-elf/10.3.1/../../../../aarch64-none-elf/bin/]
+  ignore line: [LIBRARY_PATH=/opt/buildtools/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf/bin/../lib/gcc/aarch64-none-elf/10.3.1/:/opt/buildtools/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf/bin/../lib/gcc/:/opt/buildtools/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf/bin/../lib/gcc/aarch64-none-elf/10.3.1/../../../../aarch64-none-elf/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-Os' '-Wformat-signedness' '-fno-PIE' '-specs=nosys.specs' '-fno-builtin' '-fno-dwarf2-cfi-asm' '-fomit-frame-pointer' '-fzero-initialized-in-bss' '-fdollars-in-identifiers' '-ffunction-sections' '-fdata-sections' '-fno-aggressive-loop-optimizations' '-fno-optimize-strlen' '-fno-schedule-insns' '-fno-inline-small-functions' '-fno-inline-functions-called-once' '-fno-strict-aliasing' '-finline-limit=20' '-mlittle-endian' '-nostartfiles' '-funwind-tables' '-T' '/home/uniproton/lab1/src/aarch64-kp.ld' '-v' '-o' 'cmTC_c5b23' '-mabi=lp64']
+  link line: [ /opt/buildtools/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf/bin/../libexec/gcc/aarch64-none-elf/10.3.1/collect2 -plugin /opt/buildtools/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf/bin/../libexec/gcc/aarch64-none-elf/10.3.1/liblto_plugin.so -plugin-opt=/opt/buildtools/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf/bin/../libexec/gcc/aarch64-none-elf/10.3.1/lto-wrapper -plugin-opt=-fresolution=/tmp/cci9lTnG.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lnosys -EL -X -maarch64elf -o cmTC_c5b23 -L/opt/buildtools/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf/bin/../lib/gcc/aarch64-none-elf/10.3.1 -L/opt/buildtools/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf/bin/../lib/gcc -L/opt/buildtools/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf/bin/../lib/gcc/aarch64-none-elf/10.3.1/../../../../aarch64-none-elf/lib --build-id=none CMakeFiles/cmTC_c5b23.dir/CMakeCCompilerABI.c.obj -lgcc -lc -lgcc --start-group -lgcc -lc -lnosys --end-group -T /home/uniproton/lab1/src/aarch64-kp.ld]
+    arg [/opt/buildtools/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf/bin/../libexec/gcc/aarch64-none-elf/10.3.1/collect2] ==> ignore
+    arg [-plugin] ==> ignore
+    arg [/opt/buildtools/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf/bin/../libexec/gcc/aarch64-none-elf/10.3.1/liblto_plugin.so] ==> ignore
+    arg [-plugin-opt=/opt/buildtools/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf/bin/../libexec/gcc/aarch64-none-elf/10.3.1/lto-wrapper] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/cci9lTnG.res] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lnosys] ==> ignore
+    arg [-EL] ==> ignore
+    arg [-X] ==> ignore
+    arg [-maarch64elf] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_c5b23] ==> ignore
+    arg [-L/opt/buildtools/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf/bin/../lib/gcc/aarch64-none-elf/10.3.1] ==> dir [/opt/buildtools/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf/bin/../lib/gcc/aarch64-none-elf/10.3.1]
+    arg [-L/opt/buildtools/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf/bin/../lib/gcc] ==> dir [/opt/buildtools/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf/bin/../lib/gcc]
+    arg [-L/opt/buildtools/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf/bin/../lib/gcc/aarch64-none-elf/10.3.1/../../../../aarch64-none-elf/lib] ==> dir [/opt/buildtools/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf/bin/../lib/gcc/aarch64-none-elf/10.3.1/../../../../aarch64-none-elf/lib]
+    arg [--build-id=none] ==> ignore
+    arg [CMakeFiles/cmTC_c5b23.dir/CMakeCCompilerABI.c.obj] ==> ignore
+    arg [-lgcc] ==> lib [gcc]
+    arg [-lc] ==> lib [c]
+    arg [-lgcc] ==> lib [gcc]
+    arg [--start-group] ==> ignore
+    arg [-lgcc] ==> lib [gcc]
+    arg [-lc] ==> lib [c]
+    arg [-lnosys] ==> lib [nosys]
+    arg [--end-group] ==> ignore
+    arg [-T] ==> ignore
+    arg [/home/uniproton/lab1/src/aarch64-kp.ld] ==> ignore
+  collapse library dir [/opt/buildtools/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf/bin/../lib/gcc/aarch64-none-elf/10.3.1] ==> [/opt/buildtools/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf/lib/gcc/aarch64-none-elf/10.3.1]
+  collapse library dir [/opt/buildtools/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf/bin/../lib/gcc] ==> [/opt/buildtools/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf/lib/gcc]
+  collapse library dir [/opt/buildtools/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf/bin/../lib/gcc/aarch64-none-elf/10.3.1/../../../../aarch64-none-elf/lib] ==> [/opt/buildtools/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf/aarch64-none-elf/lib]
+  implicit libs: [gcc;c;gcc;gcc;c;nosys]
+  implicit objs: []
+  implicit dirs: [/opt/buildtools/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf/lib/gcc/aarch64-none-elf/10.3.1;/opt/buildtools/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf/lib/gcc;/opt/buildtools/gcc-arm-10.3-2021.07-x86_64-aarch64-none-elf/aarch64-none-elf/lib]
+  implicit fwks: []
+
+

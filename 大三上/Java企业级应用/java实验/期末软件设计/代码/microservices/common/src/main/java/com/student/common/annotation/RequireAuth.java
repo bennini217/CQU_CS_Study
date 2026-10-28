@@ -1,0 +1,27 @@
+package com.student.common.annotation;
+
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
+
+/**
+ * 权限管理注解：标记需要登录认证的接口（装饰性注解，不实际执行验证）
+ * 使用此注解的接口表示需要用户登录后才能访问
+ * 
+ * @author 段雯菀
+ * @date 2025-01
+ */
+@Target({ElementType.METHOD, ElementType.TYPE})
+@Retention(RetentionPolicy.RUNTIME)
+public @interface RequireAuth {
+    /**
+     * 是否必须登录（默认true）
+     */
+    boolean required() default true;
+}
+
+
+
+
+

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>作品版权登记系统</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎨 作品版权登记系统</h1>
+            <p class="subtitle">保护您的创作，登记绘画版权</p>
+        </header>
+
+        <nav class="tabs">
+            <button class="tab-btn active" onclick="showTab('register')">登记版权</button>
+            <button class="tab-btn" onclick="showTab('list')">已登记作品</button>
+        </nav>
+
+        <!-- 登记版权标签页 -->
+        <div id="register-tab" class="tab-content active">
+            <div class="form-container">
+                <h2>登记绘画版权</h2>
+                <form id="register-form" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="title">作品标题 *</label>
+                        <input type="text" id="title" name="title" required placeholder="请输入作品标题">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="author">作者 *</label>
+                        <input type="text" id="author" name="author" required placeholder="请输入作者姓名">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="work_type">作品类型 *</label>
+                        <select id="work_type" name="work_type" required>
+                            <option value="">请选择作品类型</option>
+                            <option value="油画">油画</option>
+                            <option value="水彩画">水彩画</option>
+                            <option value="素描">素描</option>
+                            <option value="版画">版画</option>
+                            <option value="国画">国画</option>
+                            <option value="插画">插画</option>
+                            <option value="数字艺术">数字艺术</option>
+                            <option value="抽象画">抽象画</option>
+                            <option value="现代艺术">现代艺术</option>
+                            <option value="其他">其他</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="image">上传绘画图像 *</label>
+                        <div class="file-upload-area" id="file-upload-area">
+                            <input type="file" id="image" name="image" accept="image/*" required>
+                            <div class="file-upload-text">
+                                <span id="file-name">点击选择文件或拖拽文件到此处</span>
+                                <small>支持 PNG、JPG、JPEG 格式，分辨率至少 800×600 像素</small>
+                            </div>
+                        </div>
+                        <div id="image-preview" class="image-preview"></div>
+                    </div>
+
+                    <button type="submit" class="submit-btn">提交登记</button>
+                </form>
+
+                <div id="result-message" class="result-message"></div>
+            </div>
+        </div>
+
+        <!-- 已登记作品标签页 -->
+        <div id="list-tab" class="tab-content">
+            <div class="list-container">
+                <h2>已登记作品列表</h2>
+                <button class="refresh-btn" onclick="loadPaintings()">刷新列表</button>
+                <div id="paintings-list" class="paintings-list">
+                    <div class="loading">加载中...</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 相似作品模态框 -->
+    <div id="similar-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeSimilarModal()">&times;</span>
+            <h3>发现相似作品</h3>
+            <div id="similar-painting-info"></div>
+        </div>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
+
+
+

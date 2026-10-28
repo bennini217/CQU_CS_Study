@@ -1,0 +1,147 @@
+/*
+ * Copyright (c) 2022-2022 Huawei Technologies Co., Ltd. All rights reserved.
+ *
+ * UniProton is licensed under Mulan PSL v2.
+ * You can use this software according to the terms and conditions of the Mulan PSL v2.
+ * You may obtain a copy of Mulan PSL v2 at:
+ *          http://license.coscl.org.cn/MulanPSL2
+ * THIS SOFTWARE IS PROVIDED ON AN "AS IS" BASIS, WITHOUT WARRANTIES OF ANY KIND,
+ * EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO NON-INFRINGEMENT,
+ * MERCHANTABILITY OR FIT FOR A PARTICULAR PURPOSE.
+ * See the Mulan PSL v2 for more details.
+ * Create: 2022-11-18
+ * Description: 硬件GIC相关的处理。
+ */
+#include "prt_gic_external.h"
+#include "os_attr_armv8_external.h"
+#include "os_cpu_armv8.h"
+
+#define OS_GIC_VER 3
+
+#if (OS_GIC_VER == 2)
+union IccSgirEl1 {
+    struct {
+        U32 intId      : 4;
+        U32 rsvd0      : 11;
+        U32 nsatt      : 1;
+        U32 targetlist : 8;
+        U32 filter     : 2;
+        U32 rsvd1      : 6;
+    } bits;
+    U32 value;
+};
+#elif (OS_GIC_VER == 3)
+/* ICC_SGIR_EL1 */
+union IccSgirEl1 {
+    struct {
+        U64 targetlist : 16; // bit[0..15] 每bit对应1个核，bit置1代表中断会触发到对应的核
+        U64 aff1       : 8; // bit[16..23]
+        U64 intId      : 4; // bit[24..27] SGI 中断号.
+        U64 rsvd0      : 4; // bit[28..31]
+        U64 aff2       : 8; // bit[32..39]
+        /* bit[40] 0:中断触发给Aff3.Aff2.Aff1.<target list>;1:中断触发给本核以外的所有核 */
+        U64 irm        : 1; // bit[40]
+        U64 rsvd1      : 3; // bit[41..43]
+        /* bit[44..47] range selector，RS域共4个bit,可以表示16个范围,16×16=256，刚好表示256个cpu */
+        /* 所以spec里面，说TargetList[n]表示的aff0的值为RS*16 + n。 */
+        U64 rs         : 4; // bit[44..47]
+        U64 aff3       : 8; // bit[48..55]
+        U64 rsvd2      : 8; // bit[63..56]
+    } bits;
+    U64 value;
+};
+#endif
+
+/* GIC基地址 */
+OS_SEC_BSS uintptr_t g_gicdBase;
+/* GICR相对于GIC基地址偏移向量 */
+OS_SEC_BSS uintptr_t g_gicrOffset;
+/* GICR核间偏移向量配置 */
+OS_SEC_BSS uintptr_t g_gicrStride;
+/* 存放Core Map值 */
+OS_SEC_DATA union GicCoreMap g_gicCoreMap = {0};
+
+/*
+ * 描述: 去使能指定中断
+ */
+OS_SEC_L4_TEXT void OsGicDisableInt(U32 intId)
+{
+    if (intId <= MAX_NNSPI_ID) {
+        OsGicrDisableInt(PRT_GetCoreID(), intId);
+    } else if (intId <= MAX_SPI_ID) {
+        OsGicdDisableInt(intId);
+    }
+}
+
+/*
+ * 描述: 使能指定中断
+ */
+OS_SEC_L4_TEXT void OsGicEnableInt(U32 intId)
+{
+    if (intId <= MAX_NNSPI_ID) {
+        OsGicrEnableInt(PRT_GetCoreID(), intId);
+    } else if (intId <= MAX_SPI_ID) {
+        OsGicdEnableInt(intId);
+    }
+}
+
+/*
+ * 描述: 设置中断的优先级
+ */
+OS_SEC_L4_TEXT U32 OsGicSetPriority(U32 intId, U32 priority)
+{
+    U32 coreId;
+    enum GicIntState state;
+    
+    if (intId > MAX_SPI_ID || priority > MAX_INT_PRIORITY) {
+        return OS_FAIL;
+    }
+    
+    /* 修改配置前，务必保证中断处于禁能状态 */
+    if (intId <= MAX_NNSPI_ID) {
+        coreId = OsGetCoreID();
+        state = OsGicrGetIntState(coreId, intId);
+        OsGicrDisableInt(coreId, intId);
+        OsGicrSetPriority(coreId, intId, priority);
+        if (state == GIC_ENABLE) {
+            OsGicrEnableInt(coreId, intId);
+        }
+    } else {
+        state = OsGicdGetIntState(intId);
+        OsGicdDisableInt(intId);
+        OsGicdSetPriority(intId, priority);
+        if (state == GIC_ENABLE) {
+            OsGicdEnableInt(intId);
+        }
+    }
+    return OS_OK;
+}
+
+/*
+ * 描述: 获取中断的优先级
+ */
+OS_SEC_L4_TEXT U32 OsGicGetPriority(U32 intId)
+{
+    if (intId <= MAX_NNSPI_ID) {
+        return OsGicrGetPriority(PRT_GetCoreID(), intId);
+    }
+
+    return OsGicdGetPriority(intId);
+}
+
+/*
+ * 描述: 配置GIC基地址
+ * 备注: 此处仅对入参做基础校验，需要用户参考硬件手册，保证入参的正确。
+ */
+OS_SEC_L4_TEXT U32 OsGicConfigRegister(uintptr_t gicdBase, uintptr_t gicrOffset, uintptr_t gicrStride)
+{
+    if ((gicdBase == 0) || (gicrOffset == 0) || (gicrStride == 0)) {
+        return 1002;
+    }
+
+    g_gicdBase = gicdBase;
+    g_gicrOffset = gicrOffset;
+    g_gicrStride = gicrStride;
+
+    return OS_OK;
+}

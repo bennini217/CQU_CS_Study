@@ -1,0 +1,6 @@
+/Users/sotiny/Desktop/os2024_exp/rst/os2024_exp_redo/lab2/build/CMakeFiles/miniEuler.dir
+/Users/sotiny/Desktop/os2024_exp/rst/os2024_exp_redo/lab2/build/CMakeFiles/edit_cache.dir
+/Users/sotiny/Desktop/os2024_exp/rst/os2024_exp_redo/lab2/build/CMakeFiles/rebuild_cache.dir
+/Users/sotiny/Desktop/os2024_exp/rst/os2024_exp_redo/lab2/build/bsp/CMakeFiles/bsp.dir
+/Users/sotiny/Desktop/os2024_exp/rst/os2024_exp_redo/lab2/build/bsp/CMakeFiles/edit_cache.dir
+/Users/sotiny/Desktop/os2024_exp/rst/os2024_exp_redo/lab2/build/bsp/CMakeFiles/rebuild_cache.dir

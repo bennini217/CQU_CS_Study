@@ -1,0 +1,3 @@
+com\student\ai\AIServiceApplication.class
+com\student\ai\controller\AIController.class
+com\student\ai\mapper\GradeMapper.class

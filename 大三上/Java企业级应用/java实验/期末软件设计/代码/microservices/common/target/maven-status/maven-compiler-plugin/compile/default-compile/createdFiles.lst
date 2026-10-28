@@ -1,0 +1,16 @@
+com\student\common\util\PasswordUtil.class
+com\student\common\entity\GradeDTO.class
+com\student\common\entity\ScoreStats.class
+com\student\common\entity\User.class
+com\student\common\dto\LoginDTO.class
+com\student\common\entity\Grade.class
+com\student\common\util\SqlInjectionProtection.class
+com\student\common\Result.class
+com\student\common\entity\CourseTableDTO.class
+com\student\common\entity\Student.class
+com\student\common\entity\GradeDTO$Scores.class
+com\student\common\dto\ChangePasswordDTO.class
+com\student\common\entity\StudentSemesterGrade.class
+com\student\common\entity\TeachingClass.class
+com\student\common\entity\Course.class
+com\student\common\entity\Teacher.class

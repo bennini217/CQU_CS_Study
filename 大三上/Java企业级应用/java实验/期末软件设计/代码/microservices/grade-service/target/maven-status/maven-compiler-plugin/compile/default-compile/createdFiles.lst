@@ -1,0 +1,12 @@
+com\student\grade\mapper\TeacherMapper.class
+com\student\grade\mapper\UserMapper.class
+com\student\grade\controller\DashboardController.class
+com\student\grade\mapper\CourseMapper.class
+com\student\grade\mapper\GradeMapper.class
+com\student\grade\client\StudentServiceClient.class
+com\student\grade\config\DataInitializer.class
+com\student\grade\mapper\TeachingClassMapper.class
+com\student\grade\GradeServiceApplication.class
+com\student\grade\mapper\StudentSemesterGradeMapper.class
+com\student\grade\mapper\StudentMapper.class
+com\student\grade\controller\GradeController.class

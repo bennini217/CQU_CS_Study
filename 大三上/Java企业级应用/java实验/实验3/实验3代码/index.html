@@ -1,0 +1,388 @@
+const { createApp, reactive, ref, computed, onMounted, nextTick } = Vue;
+const { ElMessage } = ElementPlus;
+
+// ==========================================
+// 0. 网络请求配置
+// ==========================================
+axios.defaults.baseURL = 'http://localhost:8080';
+
+axios.interceptors.request.use(config => {
+    const token = localStorage.getItem('token');
+    if (token) config.headers['token'] = token;
+    return config;
+});
+
+axios.interceptors.response.use(res => {
+    if (res.data.code === 200) return res.data.data;
+    // 屏蔽登录失败的报错，交给业务逻辑处理
+    return Promise.reject(res.data.msg);
+}, err => {
+    console.error(err);
+    return Promise.reject(err);
+});
+
+// ==========================================
+// 1. AI 智能助教
+// ==========================================
+const AIAssistant = {
+    props: ['user'],
+    template: `
+        <div>
+            <div class="ai-float-btn" @click="visible = true" title="呼叫 AI 助教">
+                <el-icon class="is-loading" v-if="thinking"><Loading /></el-icon>
+                <el-icon v-else><Microphone /></el-icon>
+            </div>
+            <el-dialog v-model="visible" :title="'🤖 AI 智能助教 - ' + user.name" width="450px">
+                <div class="chat-box" ref="chatBoxRef">
+                    <div v-for="(msg, index) in messages" :key="index" :class="['message', msg.role]">
+                        <div class="avatar">{{ msg.role === 'ai' ? '🤖' : '👤' }}</div>
+                        <div class="content">{{ msg.text }}</div>
+                    </div>
+                </div>
+                <div class="input-area">
+                    <el-input v-model="input" placeholder="输入问题..." @keyup.enter="sendMessage">
+                        <template #append><el-button @click="sendMessage">发送</el-button></template>
+                    </el-input>
+                </div>
+            </el-dialog>
+        </div>
+    `,
+    setup(props) {
+        const visible = ref(false);
+        const input = ref('');
+        const thinking = ref(false);
+        const chatBoxRef = ref(null);
+        const messages = reactive([{ role: 'ai', text: `你好，${props.user.name}！` }]);
+        const scrollToBottom = () => nextTick(() => { if (chatBoxRef.value) chatBoxRef.value.scrollTop = chatBoxRef.value.scrollHeight; });
+
+        const sendMessage = async () => {
+            if (!input.value.trim()) return;
+            const text = input.value;
+            messages.push({ role: 'user', text });
+            input.value = ''; thinking.value = true; scrollToBottom();
+            try {
+                const reply = await axios.post('/api/ai/chat', { question: text, studentId: props.user.id });
+                messages.push({ role: 'ai', text: reply });
+            } catch (e) {
+                messages.push({ role: 'ai', text: 'AI 暂时掉线。' });
+            } finally {
+                thinking.value = false; scrollToBottom();
+            }
+        };
+        return { visible, input, messages, sendMessage, thinking, chatBoxRef };
+    }
+};
+
+// ==========================================
+// 2. 仪表盘 (修复 S001 被识别为老师的问题)
+// ==========================================
+const Dashboard = {
+    props: ['user', 'db'],
+    template: `
+        <div>
+            <div style="margin-bottom: 20px;">
+                <h2 style="margin:0;">早安，{{ user.name }}！☀️</h2>
+                <p style="color:#909399; margin:5px 0;">今天是 {{ currentDate }}</p>
+            </div>
+            <el-row :gutter="20">
+                <el-col :span="6" v-for="card in statsCards" :key="card.title">
+                    <el-card shadow="hover" :style="{ borderLeft: '5px solid ' + card.color }">
+                        <div style="font-size: 24px; font-weight: bold;">{{ card.value }}</div>
+                        <div style="font-size: 14px; color: #909399;">{{ card.title }}</div>
+                    </el-card>
+                </el-col>
+            </el-row>
+            <el-row :gutter="20" style="margin-top: 20px;">
+                <el-col :span="14">
+                    <el-card shadow="always">
+                        <template #header><span>{{ chartTitle }}</span></template>
+                        <div id="mainChart" style="width: 100%; height: 350px;"></div>
+                    </el-card>
+                </el-col>
+                <el-col :span="10">
+                    <el-card shadow="always" style="height: 450px;">
+                        <template #header><span>系统公告</span></template>
+                        <el-timeline>
+                            <el-timeline-item timestamp="2025/12/09" type="primary" placement="top">
+                                <el-card><h4>数据库连接成功</h4><p>数据来源：MySQL</p></el-card>
+                            </el-timeline-item>
+                        </el-timeline>
+                    </el-card>
+                </el-col>
+            </el-row>
+        </div>
+    `,
+    setup(props) {
+        const currentDate = new Date().toLocaleDateString();
+        // 🔥 修复：这里直接使用 props.user.role (我们在登录时已经强制修正为 student 了)
+        const isStudent = props.user.role === 'student';
+        const chartTitle = computed(() => isStudent ? '成绩走势' : '全校分布');
+
+        const statsCards = computed(() => {
+            if (isStudent) {
+                const list = props.db.grades || [];
+                const avg = list.length ? (list.reduce((a, b) => a + b.totalScore, 0) / list.length).toFixed(1) : 0;
+                return [
+                    { title: '已修课程', value: list.length, color: '#409EFF' },
+                    { title: '平均成绩', value: avg, color: '#67C23A' },
+                    { title: '挂科预警', value: list.filter(g => g.totalScore < 60).length, color: '#F56C6C' },
+                    { title: '综合排名', value: '前 20%', color: '#E6A23C' }
+                ];
+            } else {
+                return [
+                    { title: '管理班级', value: '3', color: '#409EFF' },
+                    { title: '学生总数', value: '100+', color: '#67C23A' },
+                    { title: '待办', value: '0', color: '#E6A23C' },
+                    { title: '预警', value: '5', color: '#F56C6C' }
+                ];
+            }
+        });
+
+        const initChart = async () => {
+            setTimeout(async () => {
+                const chartDom = document.getElementById('mainChart');
+                if (!chartDom) return;
+                echarts.dispose(chartDom);
+                const myChart = echarts.init(chartDom);
+                let option;
+                if (isStudent) {
+                    option = {
+                        tooltip: { trigger: 'axis' },
+                        xAxis: { type: 'category', data: ['一上', '一下', '二上', '二下', '本学期'] },
+                        yAxis: { type: 'value', min: 0, max: 100 },
+                        series: [{
+                            data: [75, 78, 80, 85, parseFloat(statsCards.value[1].value)], 
+                            type: 'line', smooth: true, itemStyle: { color: '#409EFF' }, areaStyle: { opacity: 0.2 }
+                        }]
+                    };
+                } else {
+                    try {
+                        const stats = await axios.get('/api/teacher/stats');
+                        option = {
+                            tooltip: { trigger: 'item' },
+                            series: [{ name: '分布', type: 'pie', radius: ['40%', '70%'], data: stats }]
+                        };
+                    } catch(e) {}
+                }
+                if (option) myChart.setOption(option);
+                window.addEventListener('resize', () => myChart.resize());
+            }, 500); 
+        };
+        onMounted(() => { initChart(); });
+        return { currentDate, statsCards, chartTitle };
+    }
+};
+
+// ==========================================
+// 3. 成绩单
+// ==========================================
+const StudentGradeTable = {
+    props: ['db'],
+    template: `
+        <el-card>
+            <template #header><span>我的成绩单</span></template>
+            <el-table :data="db.grades" stripe style="width: 100%">
+                <el-table-column prop="courseName" label="课程"></el-table-column>
+                <el-table-column prop="normalScore" label="平时"></el-table-column>
+                <el-table-column prop="midtermScore" label="期中"></el-table-column>
+                <el-table-column prop="labScore" label="实验"></el-table-column>
+                <el-table-column prop="finalScore" label="期末"></el-table-column>
+                <el-table-column prop="totalScore" label="综合" sortable>
+                    <template #default="scope">
+                        <el-tag :type="scope.row.totalScore < 60 ? 'danger' : 'success'">{{ scope.row.totalScore }}</el-tag>
+                    </template>
+                </el-table-column>
+            </el-table>
+        </el-card>
+    `
+};
+
+// ==========================================
+// 4. 课程表
+// ==========================================
+const StudentCourseTable = {
+    props: ['user'], 
+    template: `
+        <el-card style="margin-top: 20px;">
+            <template #header>
+                <div style="display:flex; justify-content:space-between; align-items:center;">
+                    <span>我的课程表</span>
+                    <el-radio-group v-model="viewMode" size="small">
+                        <el-radio-button label="list">列表</el-radio-button>
+                        <el-radio-button label="table">周课表</el-radio-button>
+                    </el-radio-group>
+                </div>
+            </template>
+            <el-table v-if="viewMode === 'list'" :data="courses" style="width: 100%" border>
+                <el-table-column prop="courseName" label="课程"></el-table-column>
+                <el-table-column prop="teacherName" label="教师"></el-table-column>
+                <el-table-column label="时间">
+                     <template #default="scope"><el-tag>{{ scope.row.day }} {{ scope.row.period }}</el-tag></template>
+                </el-table-column>
+            </el-table>
+            <div v-else class="timetable">
+                <div class="timetable-header">
+                    <div style="width:80px; flex:none; background:#f5f7fa;">时间</div>
+                    <div v-for="d in days" :key="d">{{ d }}</div>
+                </div>
+                <div class="timetable-body">
+                    <div v-for="p in periods" :key="p" class="timetable-row">
+                        <div class="period-label">{{ p }}</div>
+                        <div v-for="d in days" :key="d + p" class="timetable-cell">
+                            <div v-if="getCourse(d, p)" class="course-block" 
+                                 :style="{background: '#409EFF'}"
+                                 @click="showDetail(getCourse(d, p))">
+                                <strong>{{ getCourse(d, p).courseName }}</strong>
+                                <br/><span style="font-size:10px;">{{ getCourse(d, p).teacherName }}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </el-card>
+    `,
+    setup(props) {
+        const viewMode = ref('table');
+        const courses = ref([]);
+        const days = ['周一', '周二', '周三', '周四', '周五'];
+        const periods = ['1-2节', '3-4节', '5-6节', '7-8节'];
+
+        const loadTimetable = async () => {
+            try {
+                const res = await axios.get(`/api/grade/timetable?studentId=${props.user.id}`);
+                courses.value = res;
+            } catch (e) { console.error(e); }
+        };
+
+        const getCourse = (d, p) => courses.value.find(c => c.day === d && c.period === p);
+        const showDetail = (c) => ElMessage.info(c.courseName);
+
+        onMounted(loadTimetable);
+        return { viewMode, courses, days, periods, getCourse, showDetail };
+    }
+};
+
+// ==========================================
+// 5. 教师排名
+// ==========================================
+const TeacherRankings = {
+    props: ['db'],
+    template: `
+        <el-card>
+            <template #header><span>全校排名 Top 50</span></template>
+            <el-table :data="db.rankings" height="500" stripe>
+                <el-table-column type="index" label="排名" width="80"></el-table-column>
+                <el-table-column prop="studentId" label="学号"></el-table-column>
+                <el-table-column prop="totalScore" label="总分" sortable></el-table-column>
+                <el-table-column prop="courseName" label="课程"></el-table-column>
+            </el-table>
+        </el-card>
+    `
+};
+
+// ==========================================
+// 6. 主程序入口 (核心修正版)
+// ==========================================
+const app = createApp({
+    setup() {
+        const db = reactive({ grades: [], rankings: [] });
+        const isLoggedIn = ref(false);
+        const currentUser = ref({ name: '', id: '', role: '' });
+        const userRole = ref(''); 
+        const currentMenu = ref('dashboard');
+        const loginForm = reactive({ id: '', password: '' });
+        const loading = ref(false);
+        const passwordDialogVisible = ref(false);
+        const passwordForm = reactive({ oldPass: '', newPass: '', confirmPass: '' });
+
+        // 🔥 补全 Rules 放置报错
+        const loginRules = reactive({
+            id: [{ required: true, message: '请输入账号', trigger: 'blur' }],
+            password: [{ required: true, message: '请输入密码', trigger: 'blur' }]
+        });
+        const passwordRules = reactive({});
+
+        const handleLogin = async () => {
+            loading.value = true;
+            try {
+                const data = await axios.post('/api/login', {
+                    username: loginForm.id,
+                    password: loginForm.password
+                });
+                localStorage.setItem('token', data.token);
+                
+                // 🔥🔥🔥 核心修复逻辑 🔥🔥🔥
+                // 1. 根据 ID 强转角色 (student / teacher)
+                const fixedRole = data.id.startsWith('S') ? 'student' : 'teacher';
+                console.log(`登录成功: ${data.id}, 强制角色修正为: ${fixedRole}`);
+
+                // 2. 赋值给 userRole (控制侧边栏)
+                userRole.value = fixedRole;
+
+                // 3. 赋值给 currentUser (控制仪表盘图表)
+                // 重点：这里也要用 fixedRole，否则仪表盘会拿到后端的大写 STUDENT 导致显示错误
+                currentUser.value = { 
+                    id: data.id, 
+                    name: data.name, 
+                    role: fixedRole 
+                }; 
+
+                isLoggedIn.value = true;
+                
+                // 4. 拉取数据
+                if (fixedRole === 'student') {
+                    const res = await axios.get(`/api/grade/list?studentId=${data.id}`);
+                    db.grades = res;
+                } else {
+                    const res = await axios.get('/api/teacher/rank');
+                    db.rankings = res;
+                }
+                
+                ElMessage.success('登录成功');
+            } catch (e) {
+                ElMessage.error('登录失败: ' + e);
+            } finally {
+                loading.value = false;
+            }
+        };
+
+        const logout = () => {
+            isLoggedIn.value = false;
+            localStorage.removeItem('token');
+            db.grades = [];
+            loginForm.id = '';
+            loginForm.password = '';
+            userRole.value = '';
+        };
+
+        const handleMenuSelect = (index) => { currentMenu.value = index; };
+        const openPasswordDialog = () => { passwordDialogVisible.value = true; };
+        const submitPasswordChange = () => { passwordDialogVisible.value = false; };
+
+        return { 
+            db, isLoggedIn, currentUser, currentMenu, loginForm, loading,
+            userRole, passwordDialogVisible, passwordForm, loginRules, passwordRules,
+            handleLogin, logout, handleMenuSelect, openPasswordDialog, submitPasswordChange
+        };
+    }
+});
+
+// 注册组件
+app.component('dashboard', Dashboard);
+app.component('my-grades', StudentGradeTable);
+app.component('my-courses', StudentCourseTable);
+app.component('student-rank', TeacherRankings);
+app.component('ai-assistant', AIAssistant);
+app.component('statistics', Dashboard); 
+
+const EmptyComp = { template: '<div>功能加载中...</div>' };
+app.component('class-grades', EmptyComp);
+app.component('user-profile', EmptyComp);
+app.component('grade-warning', EmptyComp);
+
+for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
+    app.component(key, component);
+}
+
+app.use(ElementPlus);
+app.mount('#app');

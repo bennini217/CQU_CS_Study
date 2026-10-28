@@ -1,0 +1,7 @@
+add_subdirectory(tick)
+add_subdirectory(task)
+add_subdirectory(sched)
+add_subdirectory(sys)
+add_subdirectory(hwi)
+add_subdirectory(sem)
+add_subdirectory(shell)

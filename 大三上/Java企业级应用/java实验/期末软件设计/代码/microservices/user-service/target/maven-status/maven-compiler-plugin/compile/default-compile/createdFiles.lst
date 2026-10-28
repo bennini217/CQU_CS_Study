@@ -1,0 +1,4 @@
+com\student\user\UserServiceApplication.class
+com\student\user\config\SwaggerConfig.class
+com\student\user\controller\LoginController.class
+com\student\user\mapper\UserMapper.class

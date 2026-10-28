@@ -1,0 +1,6 @@
+/home/uniproton/lab1/build/CMakeFiles/miniEuler.elf.dir
+/home/uniproton/lab1/build/CMakeFiles/edit_cache.dir
+/home/uniproton/lab1/build/CMakeFiles/rebuild_cache.dir
+/home/uniproton/lab1/build/bsp/CMakeFiles/bsp.dir
+/home/uniproton/lab1/build/bsp/CMakeFiles/edit_cache.dir
+/home/uniproton/lab1/build/bsp/CMakeFiles/rebuild_cache.dir

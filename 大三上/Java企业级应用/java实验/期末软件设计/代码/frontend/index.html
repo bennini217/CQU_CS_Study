@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>基于Web的学生成绩管理系统</title>
+    <link rel="stylesheet" href="https://unpkg.com/element-plus/dist/index.css" />
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <el-container class="main-container">
+            
+            <transition name="el-fade-in-linear">
+                <div v-if="!isLoggedIn" class="login-wrapper">
+                    <el-card class="login-card">
+                        <template #header>
+                            <div class="login-header">
+                                <h2>🎓 学生成绩管理系统</h2>
+                                <p>Experiment 3 - Web Version</p>
+                            </div>
+                        </template>
+                        <el-form :model="loginForm" :rules="loginRules" ref="loginFormRef">
+                            <el-form-item prop="id">
+                                <el-input 
+                                    v-model="loginForm.id" 
+                                    placeholder="请输入ID (例如: S001 或 T001)" 
+                                    prefix-icon="User">
+                                </el-input>
+                            </el-form-item>
+                            <el-form-item prop="password">
+                                <el-input 
+                                    v-model="loginForm.password" 
+                                    type="password" 
+                                    placeholder="请输入密码 (默认: 123456)" 
+                                    prefix-icon="Lock"
+                                    show-password
+                                    @keyup.enter="handleLogin">
+                                </el-input>
+                            </el-form-item>
+                            <el-form-item>
+                                <el-button type="primary" class="login-btn" @click="handleLogin" :loading="loading">
+                                    登 录
+                                </el-button>
+                            </el-form-item>
+                        </el-form>
+                        <div class="login-tips">
+                            <p>测试账号: S001 (学生) / T003 (教师)</p>
+                            <p>默认密码: 123456</p>
+                        </div>
+                    </el-card>
+                </div>
+            </transition>
+
+            <el-container v-if="isLoggedIn" class="app-layout">
+                <el-aside width="240px" class="sidebar">
+                    <div class="sidebar-header">
+                        <div class="avatar-circle">{{ currentUser.name[0] }}</div>
+                        <div class="user-info">
+                            <span class="user-name">{{ currentUser.name }}</span>
+                            <span class="user-role">{{ userRole === 'student' ? '学生' : '教师' }}</span>
+                        </div>
+                    </div>
+                    
+                    <el-menu :default-active="currentMenu" class="el-menu-vertical" @select="handleMenuSelect">
+
+                        <el-menu-item index="dashboard">
+                            <el-icon><Odometer /></el-icon>
+                            <span>工作台 / 仪表盘</span>
+                        </el-menu-item>
+                        
+                        <template v-if="userRole === 'student'">
+                            <el-menu-item index="my-grades">
+                                <el-icon><Data-Line /></el-icon>
+                                <span>我的成绩单</span>
+                            </el-menu-item>
+                            <el-menu-item index="my-courses">
+                                <el-icon><Reading /></el-icon>
+                                <span>我的课程表</span>
+                            </el-menu-item>
+                        </template>
+
+                        <template v-if="userRole === 'teacher'">
+                            <el-menu-item index="class-grades">
+                                <el-icon><List /></el-icon>
+                                <span>班级成绩管理</span>
+                            </el-menu-item>
+                            <el-menu-item index="statistics">
+                                <el-icon><Pie-Chart /></el-icon>
+                                <span>成绩分布统计</span>
+                            </el-menu-item>
+                            <el-menu-item index="student-rank">
+                                <el-icon><Trophy /></el-icon>
+                                <span>全校排名总览</span>
+                            </el-menu-item>
+                            <el-menu-item index="grade-warning">
+                                <el-icon><Warning /></el-icon>
+                                <span>学业预警中心</span>
+                            </el-menu-item>
+
+                            <el-menu-item index="user-profile">
+                                <el-icon><User /></el-icon>
+                                <span>个人信息中心</span>
+                            </el-menu-item>
+                        </template>
+                        
+                        <div class="logout-btn-wrapper">
+                            <el-button type="warning" plain style="width: 100%; margin-bottom: 10px;" @click="openPasswordDialog">
+                                <el-icon><Lock /></el-icon> 修改密码
+                            </el-button>
+                            <el-button type="danger" plain style="width: 100%; margin-left: 0;" @click="logout">
+                                退出登录
+                            </el-button>
+                        </div>
+                    </el-menu>
+                </el-aside>
+
+                <el-main class="content-area">
+                    <component :is="currentMenu" :user="currentUser" :db="db"></component>
+                </el-main>
+            </el-container>
+            <ai-assistant v-if="isLoggedIn" :user="currentUser" :db="db"></ai-assistant>
+        </el-container>
+        <el-dialog v-model="passwordDialogVisible" title="修改密码" width="400px">
+            <el-form :model="passwordForm" :rules="passwordRules" ref="passwordFormRef" label-width="80px">
+                <el-form-item label="旧密码" prop="oldPass">
+                    <el-input 
+                        v-model="passwordForm.oldPass" 
+                        type="password" 
+                        show-password
+                        placeholder="请输入旧密码">
+                    </el-input>
+                </el-form-item>
+                <el-form-item label="新密码" prop="newPass">
+                    <el-input 
+                        v-model="passwordForm.newPass" 
+                        type="password" 
+                        show-password
+                        placeholder="请输入新密码（至少6位）">
+                    </el-input>
+                </el-form-item>
+                <el-form-item label="确认密码" prop="confirmPass">
+                    <el-input 
+                        v-model="passwordForm.confirmPass" 
+                        type="password" 
+                        show-password
+                        placeholder="请再次输入新密码">
+                    </el-input>
+                </el-form-item>
+            </el-form>
+            <template #footer>
+                <span class="dialog-footer">
+                    <el-button @click="passwordDialogVisible = false">取消</el-button>
+                    <el-button type="primary" @click="submitPasswordChange">确认修改</el-button>
+                </span>
+            </template>
+        </el-dialog>
+    </div>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://unpkg.com/element-plus"></script>
+    <script src="https://unpkg.com/@element-plus/icons-vue"></script>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
