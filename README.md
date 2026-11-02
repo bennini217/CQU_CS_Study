@@ -1,5 +1,5 @@
 # CQU_CS_Study
-2023级重庆大学计算机科学与技术学习资料，包含笔记，复习资料，实验报告
+2023级重庆大学计算机科学与技术学习资料，包含笔记，复习资料，实验报告，推荐网课
 
 **这一路走来真的不容易~这学上的我实在是太痛苦了！太痛苦了！感谢老师，感谢前辈，感谢同学，感谢gptgeminicursorclaude豆包deepseek，希望可以帮助到后世和我一样学得很懵坤的人**
 
@@ -12,12 +12,14 @@
 - 试卷
 - 复习资料
 - 作业
+- https://www.bilibili.com/video/BV1A3411z7Mf/?spm_id_from=333.1387.favlist.content.click&vd_source=a9ab34f287effc918ec339427d6b07ed
 
 ## 机器学习
 - 实验
 - 作业
 - 试卷
 - 复习资料
+- https://www.bilibili.com/video/BV1LrsoezEL8/?spm_id_from=333.1387.favlist.content.click&vd_source=a9ab34f287effc918ec339427d6b07ed
 
 ## 计算机组成原理
 - 教材与课件
@@ -26,12 +28,15 @@
 - 试卷
 - 复习资料
 - 习题与答案
+- https://www.bilibili.com/video/BV1554y1s7LS/?spm_id_from=333.1387.favlist.content.click&vd_source=a9ab34f287effc918ec339427d6b07ed
+- https://www.bilibili.com/video/BV1Ba4y1V7GD/?spm_id_from=333.1387.favlist.content.click&vd_source=a9ab34f287effc918ec339427d6b07ed
 
 ## 数据库
-- 实验（晚点上传）
+- 实验（晚点同学上传）
 - 笔记
 - 试卷
 - 复习资料
+- https://www.bilibili.com/video/BV1Bq4y1Y7GC/?spm_id_from=333.1387.favlist.content.click&vd_source=a9ab34f287effc918ec339427d6b07ed
 
 ## 数学实验
 - 实验报告
